@@ -7,3 +7,6 @@ selenium==4.21.0
 weaviate_client==3.22.1
 tiktoken==0.7.0
 langchain-community==0.2.0
+pandas==2.0.3
+openpyxl==3.1.2
+xlsxwriter==3.1.2
