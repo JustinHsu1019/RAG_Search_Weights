@@ -1,7 +1,7 @@
 import configparser
 import logging
 
-CONFIG_PATH = 'config.ini'
+CONFIG_PATH = 'config_real.ini'
 LOGGING_PATH = 'logs/Logger.log'
 
 def setup_config_and_logging():
