@@ -84,7 +84,7 @@ class WeaviateManager:
 if __name__ == "__main__":
     manager = WeaviateManager(config.get('Weaviate', 'classnm'))
 
-    with open("Data/class_data.txt", 'r', encoding='utf-8') as file:
+    with open("data/class_data.txt", 'r', encoding='utf-8') as file:
         content = file.read()
 
     new_cp = content.split("JustinHsu")
