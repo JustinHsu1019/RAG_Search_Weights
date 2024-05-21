@@ -21,7 +21,7 @@ def verify_llm_response(llm_response, answer):
 
 url_template = "http://127.0.0.1:5000/chat?mess={question}&alpha={alpha}"
 
-for alpha in [round(x * 0.1, 1) for x in range(1, 0, -1)]:
+for alpha in [round(x * 0.1, 1) for x in range(10, 0, -1)]:
     retriv_validation = []
     llm_validation = []
     retriv_results = []
