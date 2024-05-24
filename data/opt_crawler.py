@@ -6,8 +6,9 @@ import time
 import keyboard
 import json
 
-chromedriver_path = 'drivers\chromedriver.exe'
-# opt中政治大學評價路徑
+chromedriver_path = 'data/chromedriver.exe'
+
+# 歐趴糖中政治大學評價路徑
 website = 'https://www.1111opt.com.tw/search-result/JTdCJTIydHlwZSUyMiUzQTAlMkMlMjJvcmRlciUyMiUzQSUyMi1tb2RpZnlfdGltZSUyMiUyQyUyMmNvbGxlZ2VfaWQlMjIlM0ExMDkzNTIyMCU3RA'
 
 options = webdriver.ChromeOptions()
@@ -59,7 +60,7 @@ for content in contents:
     j += 1
     print('-' * 50)
 
-with open('course.txt', 'w', encoding='utf-8') as f:
+with open('data/class_data.txt', 'w', encoding='utf-8') as f:
     json.dump(contents, f, ensure_ascii=False, indent=4)
 
 driver.quit()
