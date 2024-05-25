@@ -96,3 +96,64 @@ def process_excel():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, threaded=True)
+
+
+""" JWT 驗證版 """
+# from flask import Flask, request, jsonify
+# from flask_cors import CORS
+# from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+# from datetime import timedelta
+
+# from utils.weaviate_op import search_do
+# from utils.call_ai import call_aied
+# import utils.config_log as config_log
+# config, logger, CONFIG_PATH = config_log.setup_config_and_logging()
+# config.read(CONFIG_PATH)
+
+# app = Flask(__name__)
+# CORS(app)
+# app.config['CORS_HEADERS'] = 'Content-Type, Qs-PageCode, Cache-Control'
+
+# app.config['JWT_SECRET_KEY'] = config.get("Test_Acc", 'jwt_key')
+# app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=24)
+# jwt_manager = JWTManager(app)
+
+# @app.route("/")
+# def index():
+#     """Server health check."""
+#     return "server is ready"
+
+# @app.route("/login", methods=['POST'])
+# def login():
+#     data = request.json
+#     username = data.get('username')
+#     password = data.get('password')
+
+#     if username == config.get("Test_Acc", 'username') and password == config.get("Test_Acc", 'password'):
+#         user_info = {"username": username}
+#         access_token = create_access_token(identity=user_info)
+#         return jsonify(access_token=access_token), 200
+#     else:
+#         return jsonify({"message": "Invalid credentials"}), 401
+
+# @app.route("/chat", methods=['POST'])
+# @jwt_required()
+# def chat_bot():
+#     question = request.values.get("mess")
+#     # alpha = request.values.get("alpha")
+#     alpha = 0.5
+
+#     if not question:
+#         response = "無內容"
+#     else:
+#         try:
+#             response_li = search_do(question, alp=alpha)
+#             response = call_aied(response_li, question)
+#         except Exception as e:
+#             print(f"get error: {e}")
+#             response = f"Error: {e}"
+
+#     return jsonify({"llm": response, "retriv": response_li})
+
+# if __name__ == "__main__":
+#     app.run(host="0.0.0.0", port=5000, threaded=True)
