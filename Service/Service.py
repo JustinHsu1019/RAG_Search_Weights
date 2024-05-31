@@ -57,7 +57,7 @@ def process_excel():
     output = io.BytesIO()
 
     with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-        for alpha in [round(x * 0.1, 1) for x in range(2, 0, -1)]:
+        for alpha in [round(x * 0.1, 1) for x in range(10, 0, -1)]:
             retriv_validation = []
             llm_validation = []
             retriv_results = []
