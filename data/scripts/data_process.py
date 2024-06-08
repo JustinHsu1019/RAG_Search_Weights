@@ -2,7 +2,7 @@ import pandas as pd
 import openpyxl
 from openpyxl.utils.dataframe import dataframe_to_rows
 
-file_path = 'data/【測試結果】_60題.xlsx'
+file_path = 'data/第一次試驗/【測試結果】_60題.xlsx'
 xls = pd.ExcelFile(file_path)
 
 wb = openpyxl.load_workbook(file_path)
@@ -63,4 +63,4 @@ for sheet in sheet_names:
     ws.cell(row=2, column=12).value = E_percentage_group2
     ws.cell(row=2, column=13).value = F_percentage_group2
 
-wb.save('data/【測試結果】_60題_含準確率.xlsx')
+wb.save('data/第一次試驗/【測試結果】_60題_含準確率.xlsx')

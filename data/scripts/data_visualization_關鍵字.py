@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('Agg')
 
-file_path = 'data/【測試結果】_60題_含準確率.xlsx'
+file_path = 'data/第一次試驗/【測試結果】_60題_含準確率.xlsx'
 sheets_weights = {
     'alpha 1.0': '10:0',
     'alpha 0.9': '9:1',
@@ -22,8 +22,8 @@ answer_accuracy = []
 for sheet, weight in sheets_weights.items():
     df = pd.read_excel(file_path, sheet_name=sheet)
 
-    retrieval_col = '檢索準確率'
-    answer_col = '答案準確率'
+    retrieval_col = '關鍵字_檢索準確率'
+    answer_col = '關鍵字_答案準確率'
 
     if retrieval_col in df.columns and answer_col in df.columns:
         retrieval_value = df[retrieval_col].iloc[0]
@@ -59,7 +59,7 @@ plt.bar(df['Weights'], df['Retrieval Accuracy'], color='skyblue')
 plt.xlabel('Weights')
 plt.ylabel('Retrieval Accuracy (%)')
 plt.title('Retrieval Accuracy for Different Weight Configurations')
-plt.savefig('data/img/retrieval_accuracy.png')
+plt.savefig('data/第一次試驗/關鍵字_img/retrieval_accuracy.png')
 
 # 答案準確性柱狀圖
 plt.figure(figsize=(10, 6))
@@ -67,7 +67,7 @@ plt.bar(df['Weights'], df['Answer Accuracy'], color='lightgreen')
 plt.xlabel('Weights')
 plt.ylabel('Answer Accuracy (%)')
 plt.title('Answer Accuracy for Different Weight Configurations')
-plt.savefig('data/img/answer_accuracy.png')
+plt.savefig('data/第一次試驗/關鍵字_img/answer_accuracy.png')
 
 # 混合圖表
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -77,7 +77,7 @@ ax.set_xlabel('Weights')
 ax.set_ylabel('Accuracy (%)')
 ax.set_title('Comparison of Retrieval and Answer Accuracy')
 ax.legend()
-plt.savefig('data/img/comparison_accuracy.png')
+plt.savefig('data/第一次試驗/關鍵字_img/comparison_accuracy.png')
 
 # 趨勢圖
 plt.figure(figsize=(10, 6))
@@ -87,7 +87,7 @@ plt.xlabel('Weights')
 plt.ylabel('Accuracy (%)')
 plt.title('Trend of Retrieval and Answer Accuracy')
 plt.legend()
-plt.savefig('data/img/trend_accuracy.png')
+plt.savefig('data/第一次試驗/關鍵字_img/trend_accuracy.png')
 
 # 綜合排序圖表
 plt.figure(figsize=(10, 6))
@@ -95,4 +95,4 @@ plt.bar(df['Weights'], df['Combined Score'], color='lightcoral')
 plt.xlabel('Weights')
 plt.ylabel('Combined Score')
 plt.title('Combined Score for Different Weight Configurations')
-plt.savefig('data/img/combined_score.png')
+plt.savefig('data/第一次試驗/關鍵字_img/combined_score.png')
