@@ -105,7 +105,7 @@ from sentence_transformers import SentenceTransformer
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-import Service.utils.config_log as config_log
+import backend.utils.config_log as config_log
 config, logger, CONFIG_PATH = config_log.setup_config_and_logging()
 config.read(CONFIG_PATH)
 
