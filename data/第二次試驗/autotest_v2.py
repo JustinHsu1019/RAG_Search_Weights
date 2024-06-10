@@ -2,9 +2,8 @@ import weaviate
 from langchain.embeddings import AzureOpenAIEmbeddings
 import sys, os
 import pandas as pd
-from sklearn.metrics.pairwise import cosine_similarity
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 import backend.utils.config_log as config_log
 
 config, logger, CONFIG_PATH = config_log.setup_config_and_logging()
@@ -30,17 +29,18 @@ class WeaviateSemanticSearch:
         )
         self.classNm = classNm
 
-    def vector_search(self, query_text, num_results=10):
+    def vector_search(self, query_text, num_results=2622):
         query_vector = self.embeddings.embed_query(query_text)
         vector_str = ",".join(map(str, query_vector))
         
         gql_query = f"""
         {{
             Get {{
-                {self.classNm}(nearVector: {{vector: [{vector_str}], certainty: 0}}, limit: {num_results}) {{
+                {self.classNm}(hybrid: {{query: "{query_text}", vector: [{vector_str}], alpha: 1 }}, limit: {num_results}) {{
                     content
                     _additional {{
                         distance
+                        score
                     }}
                 }}
             }}
@@ -50,18 +50,14 @@ class WeaviateSemanticSearch:
         results = search_results['data']['Get'][self.classNm]
         return results
 
-    def keyword_search(self, query_text, num_results=10):
+    def keyword_search(self, query_text, num_results=2622):
         gql_query = f"""
         {{
             Get {{
-                {self.classNm}(where: {{
-                    path: ["content"]
-                    operator: Like
-                    valueString: "{query_text}"
-                }}, limit: {num_results}) {{
+                {self.classNm}(hybrid: {{query: "{query_text}", vector: [], alpha: 0 }}, limit: {num_results}) {{
                     content
                     _additional {{
-                        distance
+                        score
                     }}
                 }}
             }}
@@ -71,23 +67,23 @@ class WeaviateSemanticSearch:
         results = search_results['data']['Get'][self.classNm]
         return results
 
-    def hybrid_search(self, query, keywords, alpha, num_results=10):
-        vector_results = self.vector_search(query, num_results)
-        keyword_results = self.keyword_search(keywords, num_results)
+    def hybrid_search(self, query, keywords, alpha, num_results=3):
+        vector_results = self.vector_search(query, 2622)
+        keyword_results = self.keyword_search(keywords, 2622)
         
-        vector_scores = {result['content']: result['_additional']['distance'] for result in vector_results}
-        keyword_scores = {result['content']: result['_additional']['distance'] for result in keyword_results}
+        vector_scores = {result['content']: float(result['_additional']['score']) for result in vector_results}
+        keyword_scores = {result['content']: float(result['_additional']['score']) for result in keyword_results}
 
         all_contents = list(set(vector_scores.keys()).union(keyword_scores.keys()))
         combined_scores = {}
         
         for content in all_contents:
-            vec_score = vector_scores.get(content, float('inf'))
-            key_score = keyword_scores.get(content, float('inf'))
+            vec_score = vector_scores.get(content, 0)
+            key_score = keyword_scores.get(content, 0)
             combined_score = alpha * vec_score + (1 - alpha) * key_score
             combined_scores[content] = combined_score
 
-        sorted_combined_scores = sorted(combined_scores.items(), key=lambda x: x[1])
+        sorted_combined_scores = sorted(combined_scores.items(), key=lambda x: x[1], reverse=True)
         top_results = [item[0] for item in sorted_combined_scores[:num_results]]
         return top_results
 
@@ -111,7 +107,7 @@ def process_excel(file_path):
             })
 
     result_df = pd.DataFrame(results)
-    result_df.to_excel('混合搜索結果.xlsx', index=False)
+    result_df.to_excel('data/第二次試驗/【測試結果】_60題.xlsx', index=False)
     print("混合搜索完成並已保存結果。")
 
 process_excel('data/第二次試驗/【測試資料】_60題.xlsx')
