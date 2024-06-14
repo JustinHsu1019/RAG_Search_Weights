@@ -5,7 +5,6 @@ from qdrant_client.models import SearchRequest, NamedVector
 from sentence_transformers import SentenceTransformer
 import dspy
 from dspy.utils import dotdict
-from torch import Tensor
 
 class QdrantSTRM(dspy.Retrieve):
     def __init__(
@@ -43,15 +42,12 @@ class QdrantSTRM(dspy.Retrieve):
         passages_scores = defaultdict(float)
         for batch in batch_results:
             for result in batch:
-                # If a passage is returned multiple times, the score is accumulated.
                 passages_scores[result.payload[self._payload_key]] += result.score
 
-        # Sort passages by their accumulated scores in descending order
         sorted_passages = sorted(
             passages_scores.items(), key=lambda x: x[1], reverse=True
         )[:k]
 
-        # Wrap each sorted passage in a dotdict with 'long_text'
         passages = [dotdict({"long_text": passage}) for passage, _ in sorted_passages]
 
         return passages
