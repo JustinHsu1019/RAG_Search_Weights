@@ -7,7 +7,7 @@
 5. 分析不同權重配置對檢索準確性和系統性能的影響及造成此分布的原因
 
 ## 專題發表影片
-[![](https://img.youtube.com/vi/OGzUFCVihws/0.jpg)](https://www.youtube.com/embed/OGzUFCVihws?si=3bWzFjl45HAsSeh6)
+[![](https://img.youtube.com/vi/TJZNO3tPgSo/0.jpg)](https://www.youtube.com/embed/TJZNO3tPgSo?si=ETXrEbdqvAJ-x8-C)
 
 ## 研究相關介紹
 
