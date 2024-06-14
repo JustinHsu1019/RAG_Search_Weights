@@ -44,3 +44,6 @@
 
 ### 未來展望
 ![](https://raw.githubusercontent.com/JustinHsu1019/RAG_Search_Weights/main/img/15.jpg)
+
+## License
+This repository is licensed under the [MIT License](https://github.com/JustinHsu1019/RAG_Search_Weights/blob/main/LICENSE).
