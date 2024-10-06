@@ -1,8 +1,10 @@
-# Benchmark Dataset
+# 向後擴展研究 113-1
 
-Dataset: [MediaTek-Research/TCEval-v2](https://huggingface.co/datasets/MediaTek-Research/TCEval-v2)
+**目標**：對於繁體中文各Topic，產業界人士只要給出一個「dataset」甚至擴展到只此一個「問題」進入我的「開源工具」跑，就能得出他要做什麼權重了（關鍵字敏感度探索），不用再只靠「經驗值」（據 Weaviate 官網所述，過去 hybrid search 權重只能靠 ”經驗“）
 
-## 資料集選擇
+## 資料集
+
+資料集選擇: [MediaTek-Research/TCEval-v2](https://huggingface.co/datasets/MediaTek-Research/TCEval-v2)
 
 **台達閱讀理解資料集**：
    - **前言**：使用聯發科整理的 TCEval-v2 資料集中的台達閱讀理解資料集 drcd，其中有不重複文章段落共 1000 段，以及對應的 3493 個問題。
@@ -24,9 +26,9 @@ Dataset: [MediaTek-Research/TCEval-v2](https://huggingface.co/datasets/MediaTek-
    - **繁體中文斷詞**：LLM 斷詞 or [CKIP Transformers](https://github.com/ckiplab/ckip-transformers)
    - **平均 Hit Rate (命中率)**：取 top_k 是 1，在撈出來最相似的 1 筆中，是否包含正確 context。有中就1分，沒中是0分
    - **平均 Mean Reciprocal Rank (MRR 平均倒數排名)**：(目前 top_k = 1 用不到) 在撈出來的幾筆中，正確的 context 排在第幾名?，若排第一得1分，排第三是 1/3 分 (取倒數)，沒中就是0分
-   - **參考文獻**：[ihower: 使用繁體中文評測各家 Embedding 模型的檢索能力](https://ihower.tw/blog/archives/12167)
+   - **參考文獻**：[ihower: 使用繁體中文評測各家 Embedding 模型的檢索能力](https://ihower.tw/blog/archives/12167)、[Anthropic: Introducing Contextual Retrieval](https://www.anthropic.com/news/contextual-retrieval)、[The best RAG’s technique yet? Anthropic’s Contextual Retrieval and Hybrid Search](https://levelup.gitconnected.com/the-best-rag-technique-yet-anthropics-contextual-retrieval-and-hybrid-search-62320d99004e)、[論文：Advancing the Evaluation of Traditional Chinese Language Models: Towards a Comprehensive Benchmark Suite](https://arxiv.org/abs/2309.08448)
 
-## 附錄：資料集介紹
+## 附錄：聯發科資料集介紹
 
 ```
 Subset: drcd, Row Count: 3493
