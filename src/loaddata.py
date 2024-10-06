@@ -2,14 +2,14 @@ import pandas as pd
 from datasets import load_dataset
 
 dataset_name = "MediaTek-Research/TCEval-v2"
-subset = 'drcd'
+subset = "drcd"
 
 ds = load_dataset(dataset_name, subset)
 
 data = {
-    "id": ds['test']['id'],
-    "問題": ds['test']['question'],
-    "答案": ds['test']['paragraph']
+    "id": ds["test"]["id"],
+    "問題": ds["test"]["question"],
+    "答案": ds["test"]["paragraph"],
 }
 
 df = pd.DataFrame(data)

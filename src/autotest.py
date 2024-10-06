@@ -4,9 +4,11 @@ import sys, os
 import pandas as pd
 from ckip_transformers.nlp import CkipWordSegmenter, CkipPosTagger
 
+from utils.call_ai import call_aied
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-import utils.config_log as config_log
+import src.utils.config_log as config_log
 
 config, logger, CONFIG_PATH = config_log.setup_config_and_logging()
 config.read(CONFIG_PATH)
@@ -40,7 +42,7 @@ class WeaviateSemanticSearch:
         self.client = weaviate.Client(url=wea_url)
         self.classNm = classNm
 
-    def vector_search(self, query_text, num_results=2000):
+    def vector_search(self, query_text, num_results=1000):
         query_vector = self.embeddings.embed_query(query_text)
         vector_str = ",".join(map(str, query_vector))
 
@@ -61,7 +63,7 @@ class WeaviateSemanticSearch:
         results = search_results["data"]["Get"][self.classNm]
         return results
 
-    def keyword_search(self, query_text, num_results=2000):
+    def keyword_search(self, query_text, num_results=1000):
         gql_query = f"""
         {{
             Get {{
@@ -78,10 +80,7 @@ class WeaviateSemanticSearch:
         results = search_results["data"]["Get"][self.classNm]
         return results
 
-    def hybrid_search(self, query, keywords, alpha, num_results=5):
-        vector_results = self.vector_search(query, 2000)
-        keyword_results = self.keyword_search(keywords, 2000)
-
+    def hybrid_search(self, vector_results, keyword_results, alpha, num_results=5):
         vector_scores = {
             result["content"]: float(result["_additional"]["score"])
             for result in vector_results
@@ -112,15 +111,29 @@ def main(file_path):
     questions = df["問題"].tolist()
     answers = df["答案"].tolist()
 
+    """ for test mode"""
+    # questions = questions[0:30]
+    # answers = answers[0:30]
+
     searcher = WeaviateSemanticSearch(config.get("Weaviate", "classnm"))
     results = []
 
     for question, answer in zip(questions, answers):
+        """中研院 CKIP 分詞"""
+        # ws = ws_driver([question])
+        # pos = pos_driver(ws)
+        # keyword = clean(ws[0], pos[0])
+
+        """ LLM 分詞 """
+        keyword = call_aied(question)
+        print("keywords: " + keyword)
+
+        vector_results = searcher.vector_search(question, 1000)
+        keyword_results = searcher.keyword_search(keyword, 1000)
         for alpha in [round(x * 0.1, 1) for x in range(10, 0, -1)]:
-            ws = ws_driver([question])
-            pos = pos_driver(ws)
-            keyword = clean(ws[0], pos[0])
-            result = searcher.hybrid_search(question, keyword, alpha, num_results=5)
+            result = searcher.hybrid_search(
+                vector_results, keyword_results, alpha, num_results=1
+            )
             results.append(
                 {
                     "問題": question,
@@ -137,17 +150,4 @@ def main(file_path):
 
 if __name__ == "__main__":
     main("result/test_1006/testdata_3493.xlsx")
-
-
-""" LLM 分詞
-[題目]：{question}
-
-請幫我提取 [題目] 中你認為的關鍵字
-
-用空格隔開輸出
-
-輸出範例：
-關鍵字1 關鍵字2 關鍵字3
-
-Start directly with the first keyword, avoid any unnecessary introduction.
-"""
+    # main("result/backup/第二次試驗/【測試資料】_60題.xlsx")

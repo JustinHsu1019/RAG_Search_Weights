@@ -1,5 +1,6 @@
 import secrets
 
+
 def generate_jwt_secret_key(length=32):
     """
     生成一個安全的 JWT 密鑰。
@@ -8,6 +9,7 @@ def generate_jwt_secret_key(length=32):
     :return: 生成的 JWT 密鑰。
     """
     return secrets.token_hex(length)
+
 
 if __name__ == "__main__":
     secret_key = generate_jwt_secret_key()
