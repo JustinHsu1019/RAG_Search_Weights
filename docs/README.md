@@ -21,9 +21,9 @@ Dataset: [MediaTek-Research/TCEval-v2](https://huggingface.co/datasets/MediaTek-
    - **細節**：將`paragraph`作為存入 weaviate 的正確答案，`question`作為丟入 retrieval 的 query。只需將此 1000 篇`paragraph` 存入 weaviate (需用程式匹配重複)，並將`question`及`paragraph`存入一份 excel 檔案，之後對答案用。
    - **代辦事項**：完成所有工作後，利用 LLM 將此資料集分類，使最終能取得對應**不同領域**分別的評測結果。
    - **Embedding 模型選擇**：text-embedding-3-large
-   - **繁體中文斷詞**：[CKIP Transformers](https://github.com/ckiplab/ckip-transformers)
-   - **平均 Hit Rate (命中率)**：取 top_k 是 5，在撈出來最相似的 5 筆中，是否包含正確 context。只要有中就1分，沒中是0分
-   - **平均 Mean Reciprocal Rank (MRR 平均倒數排名)**：在撈出來的五筆中，正確的 context 排在第幾名?，若排第一得1分，排第三是 1/3 分 (取倒數)，沒中就是0分
+   - **繁體中文斷詞**：LLM 斷詞 or [CKIP Transformers](https://github.com/ckiplab/ckip-transformers)
+   - **平均 Hit Rate (命中率)**：取 top_k 是 1，在撈出來最相似的 1 筆中，是否包含正確 context。有中就1分，沒中是0分
+   - **平均 Mean Reciprocal Rank (MRR 平均倒數排名)**：(目前 top_k = 1 用不到) 在撈出來的幾筆中，正確的 context 排在第幾名?，若排第一得1分，排第三是 1/3 分 (取倒數)，沒中就是0分
    - **參考文獻**：[ihower: 使用繁體中文評測各家 Embedding 模型的檢索能力](https://ihower.tw/blog/archives/12167)
 
 ## 附錄：資料集介紹
