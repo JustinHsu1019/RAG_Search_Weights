@@ -16,3 +16,4 @@ datasets
 jieba
 ckip-transformers
 pydantic
+matplotlib
