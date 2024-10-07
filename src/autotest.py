@@ -96,6 +96,12 @@ class WeaviateSemanticSearch:
         for content in all_contents:
             vec_score = vector_scores.get(content, 0)
             key_score = keyword_scores.get(content, 0)
+
+            """ test: get the score """
+            # print("vec: " + str(vec_score))
+            # print("key: " + str(key_score))
+
+
             combined_score = alpha * vec_score + (1 - alpha) * key_score
             combined_scores[content] = combined_score
 
