@@ -130,7 +130,7 @@ def main(file_path):
 
         vector_results = searcher.vector_search(question, 1000)
         keyword_results = searcher.keyword_search(keyword, 1000)
-        for alpha in [round(x * 0.1, 1) for x in range(10, 0, -1)]:
+        for alpha in [round(x * 0.1, 1) for x in range(10, -1, -1)]:
             result = searcher.hybrid_search(
                 vector_results, keyword_results, alpha, num_results=1
             )
