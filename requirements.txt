@@ -17,3 +17,5 @@ jieba
 ckip-transformers
 pydantic
 matplotlib
+rank-bm25==0.2.2
+nltk
