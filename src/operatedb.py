@@ -2,6 +2,8 @@ import os
 import time
 import weaviate
 import sys
+import warnings
+from contextlib import redirect_stdout, redirect_stderr
 from datasets import load_dataset
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -15,6 +17,26 @@ config.read(CONFIG_PATH)
 wea_url = config.get("Weaviate", "weaviate_url")
 openai_api_key = config.get("OpenAI", "api_key")
 PROPERTIES = ["uuid", "content"]
+
+# 忽略所有的 DeprecationWarning
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+
+def silent_call_ckip_v2(question):
+    # 保存當前的 sys.stdout 和 sys.stderr
+    original_stdout = sys.stdout
+    original_stderr = sys.stderr
+    try:
+        # 使用 with 確保 stdout 和 stderr 正確地關閉，靜默所有輸出
+        with open(os.devnull, 'w') as fnull:
+            with redirect_stdout(fnull), redirect_stderr(fnull):
+                ws = ws_driver([question])
+                pos = pos_driver(ws)
+    finally:
+        # 恢復 sys.stdout 和 sys.stderr
+        sys.stdout = original_stdout
+        sys.stderr = original_stderr
+    return ws, pos
 
 
 class WeaviateManager:
@@ -155,8 +177,7 @@ if __name__ == "__main__2":
         cont = entry["paragraph"]
 
         if cont != latest_p:
-            ws = ws_driver([cont])
-            pos = pos_driver(ws)
+            ws, pos = silent_call_ckip_v2(cont)
             cont_keyword = clean(ws[0], pos[0])
             idd = entry["id"]
             manager.insert_data(idd, cont_keyword)

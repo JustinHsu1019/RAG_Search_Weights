@@ -2,7 +2,9 @@ import weaviate
 from langchain.embeddings import OpenAIEmbeddings
 import sys
 import os
+import warnings
 import pandas as pd
+from contextlib import redirect_stdout, redirect_stderr
 
 from utils.ckip import ws_driver, pos_driver, clean
 from utils.call_ai import call_aied
@@ -16,6 +18,26 @@ wea_url = config.get("Weaviate", "weaviate_url")
 PROPERTIES = ["uuid", "content"]
 
 os.environ["OPENAI_API_KEY"] = config.get("OpenAI", "api_key")
+
+# 忽略所有的 DeprecationWarning
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+
+def silent_call_ckip_v2(question):
+    # 保存當前的 sys.stdout 和 sys.stderr
+    original_stdout = sys.stdout
+    original_stderr = sys.stderr
+    try:
+        # 使用 with 確保 stdout 和 stderr 正確地關閉，靜默所有輸出
+        with open(os.devnull, 'w') as fnull:
+            with redirect_stdout(fnull), redirect_stderr(fnull):
+                ws = ws_driver([question])
+                pos = pos_driver(ws)
+    finally:
+        # 恢復 sys.stdout 和 sys.stderr
+        sys.stdout = original_stdout
+        sys.stderr = original_stderr
+    return ws, pos
 
 
 class WeaviateSemanticSearch:
@@ -95,7 +117,7 @@ class WeaviateSemanticSearch:
         return top_results
 
 
-def main(file_path):
+def main(file_path, batch_size=100):
     df = pd.read_excel(file_path)
     questions = df["問題"].tolist()
     answers = df["答案"].tolist()
@@ -109,33 +131,48 @@ def main(file_path):
     )
     results = []
 
-    for question, answer in zip(questions, answers):
-        """中研院 CKIP 分詞"""
-        ws = ws_driver([question])
-        pos = pos_driver(ws)
-        keyword = clean(ws[0], pos[0])
+    for idx, (question, answer) in enumerate(zip(questions, answers)):
+        try:
+            """中研院 CKIP 分詞 (靜默模式)"""
+            # ws = ws_driver([question])
+            # pos = pos_driver(ws)
+            ws, pos = silent_call_ckip_v2(question)
+            keyword = clean(ws[0], pos[0])
 
-        """ LLM 分詞 """
-        # keyword = call_aied(question)
-        # print("keywords: " + keyword)
+            """ LLM 分詞 """
+            # keyword = call_aied(question)
 
-        vector_results = searcher.vector_search(question, 1000)
-        keyword_results = searcher.keyword_search(keyword, 1000)
-        for alpha in [round(x * 0.1, 1) for x in range(10, -1, -1)]:
-            result = searcher.hybrid_search(
-                vector_results, keyword_results, alpha, num_results=1
-            )
-            results.append(
-                {
-                    "問題": question,
-                    "答案": answer,
-                    "關鍵字": keyword,
-                    f"檢索結果_{alpha}": result,
-                }
-            )
+            vector_results = searcher.vector_search(question, 1000)
+            keyword_results = searcher.keyword_search(keyword, 1000)
+            for alpha in [round(x * 0.1, 1) for x in range(10, -1, -1)]:
+                result = searcher.hybrid_search(
+                    vector_results, keyword_results, alpha, num_results=1
+                )
+                results.append(
+                    {
+                        "問題": question,
+                        "答案": answer,
+                        "關鍵字": keyword,
+                        f"檢索結果_{alpha}": result,
+                    }
+                )
 
-    result_df = pd.DataFrame(results)
-    result_df.to_excel("result/test_1006/testresult_3493.xlsx", index=False)
+            if (idx + 1) % batch_size == 0:
+                result_df = pd.DataFrame(results)
+                if os.path.exists("result/test_1006/testresult_3493.xlsx"):
+                    existing_df = pd.read_excel("result/test_1006/testresult_3493.xlsx")
+                    result_df = pd.concat([existing_df, result_df], ignore_index=True)
+                result_df.to_excel("result/test_1006/testresult_3493.xlsx", index=False)
+                results = []
+        except Exception as e:
+            logger.error(f"Error processing question {idx + 1}: {e}")
+
+    if results:
+        result_df = pd.DataFrame(results)
+        if os.path.exists("result/test_1006/testresult_3493.xlsx"):
+            existing_df = pd.read_excel("result/test_1006/testresult_3493.xlsx")
+            result_df = pd.concat([existing_df, result_df], ignore_index=True)
+        result_df.to_excel("result/test_1006/testresult_3493.xlsx", index=False)
     print("finished")
 
 
