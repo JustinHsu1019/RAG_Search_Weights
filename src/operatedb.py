@@ -7,6 +7,7 @@ from datasets import load_dataset
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 import utils.config_log as config_log
+from utils.ckip import ws_driver, pos_driver, clean
 
 config, logger, CONFIG_PATH = config_log.setup_config_and_logging()
 config.read(CONFIG_PATH)
@@ -116,6 +117,9 @@ class WeaviateManager:
 
 
 if __name__ == "__main__1":
+    """
+    Vector Class
+    """
     dataset_name = "MediaTek-Research/TCEval-v2"
     subset = "drcd"
     ds = load_dataset(dataset_name, subset)
@@ -138,6 +142,37 @@ if __name__ == "__main__1":
 
 
 if __name__ == "__main__2":
+    """
+    CKIP Keyword Class
+    """
+    dataset_name = "MediaTek-Research/TCEval-v2"
+    subset = "drcd"
+    ds = load_dataset(dataset_name, subset)
+
+    manager = WeaviateManager(config.get("Weaviate", "keyclassnm"))
+
+    latest_p = None
+
+    for entry in ds["test"]:
+        id = entry["id"]
+        cont = entry["paragraph"]
+
+        if cont != latest_p:
+            ws = ws_driver([cont])
+            pos = pos_driver(ws)
+            cont_keyword = clean(ws[0], pos[0])
+            manager.insert_data(id, cont_keyword)
+            latest_p = cont
+        else:
+            print(f"Skipping duplicate paragraph for id={id}")
+
+    print("資料已成功存入 Key Weaviate!")
+
+
+if __name__ == "__main__3":
+    """
+    Old Courses Class
+    """
     manager = WeaviateManager(config.get("Weaviate", "classnm"))
 
     with open("src/backup/data/【課程評價】_110112.txt", "r", encoding="utf-8") as file:
@@ -153,7 +188,7 @@ if __name__ == "__main__2":
     print("\n\n" + str(index))
 
 
-if __name__ == "__main__3":
+if __name__ == "__main__4":
     """
     測試「關鍵字」效果是否屬實
     """
@@ -161,16 +196,25 @@ if __name__ == "__main__3":
 
     manager.delete_data_by_custom_uuid("test-78")
 
-    manager.insert_data("test-79-1", """
+    manager.insert_data(
+        "test-79-1",
+        """
 由於缺乏有效的管理和協調，動物的學名命名非常混亂，同名異物、同物異名等現象層出不窮，最初由林奈制定的，簡單的分類和命名規則已經不符使用了，需要編制更完善和更嚴謹的命名規則。在這樣的背景下，19世紀下半葉在世界範圍內出現了許多各國自行制定的命名規則，其中比較有名的有：英國的史崔克蘭規則；美國則是由著名動物學家多爾，他發明了重要的命名法則，用他自己的名字作為這個規則的命名，同時也是多爾所屬的這個國家的鳥類學會，訂出了關於鳥類命名法則；法國動物學會規則；德意志動物學會規則；國際地質學會議關於動物化石命名的杜維爾規則。這些命名法規大多結構嚴謹，內容完善，但是相互獨立使得他們不能有效解決國際動物學界面臨的學名混亂問題。直到19世紀晚期國際動物學界普遍認同需要有一部統一的世界性動物學名命名規則。
-""")
-    manager.insert_data("test-79-2", """
+""",
+    )
+    manager.insert_data(
+        "test-79-2",
+        """
 1958年，在倫敦召開的第十五屆國際動物學會議通過了此前由國際動物命名法委員會主席布拉德利提交的法規草案。至此，世界性的動物命名規則完成了「法國規則－國際動物命名規則－國際動物命名規約」的轉變，以法規的形式穩定下來。此後，國際動物命名規則經歷了四次修訂，最近的一次修訂的版本是在1997年經過國際動物命名法委員會投票通過的。國際動物命名規約最初的執行解釋和修訂機構是國際動物學會議下設的國際動物命名法委員會，1972年在摩納哥召開的第十七屆國際動物學大會決定將原本定期召開的大會改為不定期召開，為了保持國際動物命名規約的延續性會議決定將其對國際動物命名規約的責任和義務轉移給國際生物學聯合會，現在國際生物科學聯合會下設的動物命名法委員會具體負責法規的解釋與修訂。
 19世紀下半葉在世界範圍內出現了許多各國自行制定的命名規則，其中比較有名的有：英國的史崔克蘭規則；美國的多爾規則；法國動物學會規則；德意志動物學會規則；國際地質學會議關於動物化石命名的杜維爾規則；多爾出生的這個國家，有個鳥類學家協會，也出了一套關於鳥類命名的鳥類學家協會規則。
-""")
-    manager.insert_data("test-79-3", """
+""",
+    )
+    manager.insert_data(
+        "test-79-3",
+        """
 多爾、美國多爾、規、則、規則、美國、鳥類學家協會、鳥類學家協會規則、鳥類、多、協會、美、國
 多爾鳥類學家協會、多爾鳥類、美國多爾鳥類學家、美國協會、多爾鳥、多爾協會
 這是一個協會，這個協會在美國
 這是一個專家，這個專家在美國
-""")
+""",
+    )
