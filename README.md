@@ -6,6 +6,9 @@
 4. 將結果進行統計和視覺化，展示各種權重配置下的檢索準確性與系統性能
 5. 分析不同權重配置對檢索準確性和系統性能的影響及造成此分布的原因
 
+## TODO
+- [ ] 2024/10/10 需重寫此 README.md，將新研究成果同步至此。過去專題成果除可與新成果做部分比較，已無意義
+
 ## 專題發表影片
 [![](https://img.youtube.com/vi/TJZNO3tPgSo/0.jpg)](https://www.youtube.com/embed/TJZNO3tPgSo?si=ETXrEbdqvAJ-x8-C)
 
