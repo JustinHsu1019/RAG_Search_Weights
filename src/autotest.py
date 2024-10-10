@@ -125,6 +125,7 @@ def main(file_path, batch_size=100):
     """ for test mode"""
     # questions = questions[0:30]
     # answers = answers[0:30]
+    # batch_size = 10
 
     searcher = WeaviateSemanticSearch(
         config.get("Weaviate", "classnm"), config.get("Weaviate", "keyclassnm")
