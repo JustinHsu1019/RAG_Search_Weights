@@ -130,6 +130,7 @@ def main(file_path, batch_size=100):
         config.get("Weaviate", "classnm"), config.get("Weaviate", "keyclassnm")
     )
     results = []
+    keyword_results = []
 
     for idx, (question, answer) in enumerate(zip(questions, answers)):
         try:
@@ -142,11 +143,18 @@ def main(file_path, batch_size=100):
             """ LLM 分詞 """
             # keyword = call_aied(question)
 
+            keyword_results.append({
+                '問題': question,
+                '答案': answer,
+                'keyword': keyword,
+                'keyword_num': len(keyword.split())
+            })
+
             vector_results = searcher.vector_search(question, 1000)
-            keyword_results = searcher.keyword_search(keyword, 1000)
+            keyword_results_search = searcher.keyword_search(keyword, 1000)
             for alpha in [round(x * 0.1, 1) for x in range(10, -1, -1)]:
                 result = searcher.hybrid_search(
-                    vector_results, keyword_results, alpha, num_results=1
+                    vector_results, keyword_results_search, alpha, num_results=1
                 )
                 results.append(
                     {
@@ -159,20 +167,40 @@ def main(file_path, batch_size=100):
 
             if (idx + 1) % batch_size == 0:
                 result_df = pd.DataFrame(results)
-                if os.path.exists("result/test_1006/testresult_3493.xlsx"):
-                    existing_df = pd.read_excel("result/test_1006/testresult_3493.xlsx")
+                result_file = "result/test_1006/testresult_3493.xlsx"
+                if os.path.exists(result_file):
+                    existing_df = pd.read_excel(result_file)
                     result_df = pd.concat([existing_df, result_df], ignore_index=True)
-                result_df.to_excel("result/test_1006/testresult_3493.xlsx", index=False)
+                result_df.to_excel(result_file, index=False)
                 results = []
+
+                keyword_df = pd.DataFrame(keyword_results)
+                keyword_file = "result/test_1006/testkey_3293.xlsx"
+                if os.path.exists(keyword_file):
+                    existing_keyword_df = pd.read_excel(keyword_file)
+                    keyword_df = pd.concat([existing_keyword_df, keyword_df], ignore_index=True)
+                keyword_df.to_excel(keyword_file, index=False)
+                keyword_results = []
+
         except Exception as e:
             logger.error(f"Error processing question {idx + 1}: {e}")
 
     if results:
         result_df = pd.DataFrame(results)
-        if os.path.exists("result/test_1006/testresult_3493.xlsx"):
-            existing_df = pd.read_excel("result/test_1006/testresult_3493.xlsx")
+        result_file = "result/test_1006/testresult_3493.xlsx"
+        if os.path.exists(result_file):
+            existing_df = pd.read_excel(result_file)
             result_df = pd.concat([existing_df, result_df], ignore_index=True)
-        result_df.to_excel("result/test_1006/testresult_3493.xlsx", index=False)
+        result_df.to_excel(result_file, index=False)
+
+    if keyword_results:
+        keyword_df = pd.DataFrame(keyword_results)
+        keyword_file = "result/test_1006/testkey_3293.xlsx"
+        if os.path.exists(keyword_file):
+            existing_keyword_df = pd.read_excel(keyword_file)
+            keyword_df = pd.concat([existing_keyword_df, keyword_df], ignore_index=True)
+        keyword_df.to_excel(keyword_file, index=False)
+
     print("finished")
 
 
