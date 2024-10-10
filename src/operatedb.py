@@ -129,14 +129,12 @@ if __name__ == "__main__1":
     latest_p = None
 
     for entry in ds["test"]:
-        id = entry["id"]
         cont = entry["paragraph"]
 
         if cont != latest_p:
-            manager.insert_data(id, cont)
+            idd = entry["id"]
+            manager.insert_data(idd, cont)
             latest_p = cont
-        else:
-            print(f"Skipping duplicate paragraph for id={id}")
 
     print("資料已成功存入 Weaviate!")
 
@@ -154,17 +152,15 @@ if __name__ == "__main__2":
     latest_p = None
 
     for entry in ds["test"]:
-        id = entry["id"]
         cont = entry["paragraph"]
 
         if cont != latest_p:
             ws = ws_driver([cont])
             pos = pos_driver(ws)
             cont_keyword = clean(ws[0], pos[0])
-            manager.insert_data(id, cont_keyword)
+            idd = entry["id"]
+            manager.insert_data(idd, cont_keyword)
             latest_p = cont
-        else:
-            print(f"Skipping duplicate paragraph for id={id}")
 
     print("資料已成功存入 Key Weaviate!")
 
