@@ -105,7 +105,7 @@ class WeaviateSemanticSearch:
             vec_score = vector_scores.get(doc_id, 0)
             key_score = keyword_scores.get(doc_id, 0)
 
-            """ test: get the score """
+            """ test: score log """
             # print("vec: " + str(vec_score))
             # print("key: " + str(key_score))
 
@@ -144,14 +144,14 @@ def main(file_path, batch_size=100):
         zip(questions, answers, keywords)
     ):
         try:
-            """中研院 CKIP 分詞 (靜默模式)"""
+            """ 中研院 CKIP 分詞 (目前使用中；但有過去數據就先直接使用，速度快) """
             # ws = ws_driver([question])
             # pos = pos_driver(ws)
 
             # ws, pos = silent_call_ckip_v2(question)
             # keyword = clean(ws[0], pos[0])
 
-            """ LLM 分詞 """
+            """ LLM 分詞 (已棄用) """
             # keyword = call_aied(question)
 
             # keyword_results.append({

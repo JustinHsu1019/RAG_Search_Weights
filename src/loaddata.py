@@ -2,7 +2,7 @@ import pandas as pd
 from datasets import load_dataset
 
 
-def load_data():
+def load_dataset_from_hf():
     dataset_name = "MediaTek-Research/TCEval-v2"
     subset = "drcd"
 
@@ -26,7 +26,7 @@ def insert_data(idd, cont, data_list):
     data_list.append({"id": idd, "paragraph": cont})
 
 
-def insert_data_excel():
+def create_id_cont_mapping():
     dataset_name = "MediaTek-Research/TCEval-v2"
     subset = "drcd"
     ds = load_dataset(dataset_name, subset)
@@ -49,5 +49,5 @@ def insert_data_excel():
 
 
 if __name__ == "__main__":
-    # load_data()
-    insert_data_excel()
+    # load_dataset_from_hf()
+    create_id_cont_mapping()
