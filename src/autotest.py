@@ -29,7 +29,7 @@ def silent_call_ckip_v2(question):
     original_stderr = sys.stderr
     try:
         # 使用 with 確保 stdout 和 stderr 正確地關閉，靜默所有輸出
-        with open(os.devnull, 'w') as fnull:
+        with open(os.devnull, "w") as fnull:
             with redirect_stdout(fnull), redirect_stderr(fnull):
                 ws = ws_driver([question])
                 pos = pos_driver(ws)
@@ -56,6 +56,7 @@ class WeaviateSemanticSearch:
         {{
             Get {{
                 {self.classNm}(hybrid: {{query: "{query_text}", vector: [{vector_str}], alpha: 1 }}, limit: {num_results}) {{
+                    uuid
                     content
                     _additional {{
                         distance
@@ -74,6 +75,7 @@ class WeaviateSemanticSearch:
         {{
             Get {{
                 {self.keyclassNm}(hybrid: {{query: "{query_text}", vector: [], alpha: 0 }}, limit: {num_results}) {{
+                    uuid
                     content
                     _additional {{
                         score
@@ -88,33 +90,34 @@ class WeaviateSemanticSearch:
 
     def hybrid_search(self, vector_results, keyword_results, alpha, num_results=5):
         vector_scores = {
-            result["content"]: float(result["_additional"]["score"])
+            result["uuid"]: float(result["_additional"]["score"])
             for result in vector_results
         }
         keyword_scores = {
-            result["content"]: float(result["_additional"]["score"])
+            result["uuid"]: float(result["_additional"]["score"])
             for result in keyword_results
         }
 
-        all_contents = list(set(vector_scores.keys()).union(keyword_scores.keys()))
+        all_ids = set(vector_scores.keys()).union(keyword_scores.keys())
         combined_scores = {}
 
-        for content in all_contents:
-            vec_score = vector_scores.get(content, 0)
-            key_score = keyword_scores.get(content, 0)
+        for doc_id in all_ids:
+            vec_score = vector_scores.get(doc_id, 0)
+            key_score = keyword_scores.get(doc_id, 0)
 
             """ test: get the score """
             # print("vec: " + str(vec_score))
             # print("key: " + str(key_score))
 
             combined_score = alpha * vec_score + (1 - alpha) * key_score
-            combined_scores[content] = combined_score
+            combined_scores[doc_id] = combined_score
 
         sorted_combined_scores = sorted(
             combined_scores.items(), key=lambda x: x[1], reverse=True
         )
-        top_results = [item[0] for item in sorted_combined_scores[:num_results]]
-        return top_results
+        top_ids = [item[0] for item in sorted_combined_scores[:num_results]]
+
+        return top_ids
 
 
 def main(file_path, batch_size=100):
@@ -122,34 +125,41 @@ def main(file_path, batch_size=100):
     questions = df["問題"].tolist()
     answers = df["答案"].tolist()
 
+    """ get keyword from excel """
+    keywords = df["keyword"].tolist()
+
     """ for test mode"""
     # questions = questions[0:30]
     # answers = answers[0:30]
+    # keywords = keywords[0:30]
     # batch_size = 10
 
     searcher = WeaviateSemanticSearch(
         config.get("Weaviate", "classnm"), config.get("Weaviate", "keyclassnm")
     )
     results = []
-    keyword_results = []
+    # keyword_results = []
 
-    for idx, (question, answer) in enumerate(zip(questions, answers)):
+    for idx, (question, answer, keyword) in enumerate(
+        zip(questions, answers, keywords)
+    ):
         try:
             """中研院 CKIP 分詞 (靜默模式)"""
             # ws = ws_driver([question])
             # pos = pos_driver(ws)
-            ws, pos = silent_call_ckip_v2(question)
-            keyword = clean(ws[0], pos[0])
+
+            # ws, pos = silent_call_ckip_v2(question)
+            # keyword = clean(ws[0], pos[0])
 
             """ LLM 分詞 """
             # keyword = call_aied(question)
 
-            keyword_results.append({
-                '問題': question,
-                '答案': answer,
-                'keyword': keyword,
-                'keyword_num': len(keyword.split())
-            })
+            # keyword_results.append({
+            #     '問題': question,
+            #     '答案': answer,
+            #     'keyword': keyword,
+            #     'keyword_num': len(keyword.split())
+            # })
 
             vector_results = searcher.vector_search(question, 1000)
             keyword_results_search = searcher.keyword_search(keyword, 1000)
@@ -175,13 +185,13 @@ def main(file_path, batch_size=100):
                 result_df.to_excel(result_file, index=False)
                 results = []
 
-                keyword_df = pd.DataFrame(keyword_results)
-                keyword_file = "result/test_1006/testkey_3293.xlsx"
-                if os.path.exists(keyword_file):
-                    existing_keyword_df = pd.read_excel(keyword_file)
-                    keyword_df = pd.concat([existing_keyword_df, keyword_df], ignore_index=True)
-                keyword_df.to_excel(keyword_file, index=False)
-                keyword_results = []
+                # keyword_df = pd.DataFrame(keyword_results)
+                # keyword_file = "result/test_1006/testkey_3493.xlsx"
+                # if os.path.exists(keyword_file):
+                #     existing_keyword_df = pd.read_excel(keyword_file)
+                #     keyword_df = pd.concat([existing_keyword_df, keyword_df], ignore_index=True)
+                # keyword_df.to_excel(keyword_file, index=False)
+                # keyword_results = []
 
         except Exception as e:
             logger.error(f"Error processing question {idx + 1}: {e}")
@@ -194,17 +204,17 @@ def main(file_path, batch_size=100):
             result_df = pd.concat([existing_df, result_df], ignore_index=True)
         result_df.to_excel(result_file, index=False)
 
-    if keyword_results:
-        keyword_df = pd.DataFrame(keyword_results)
-        keyword_file = "result/test_1006/testkey_3293.xlsx"
-        if os.path.exists(keyword_file):
-            existing_keyword_df = pd.read_excel(keyword_file)
-            keyword_df = pd.concat([existing_keyword_df, keyword_df], ignore_index=True)
-        keyword_df.to_excel(keyword_file, index=False)
+    # if keyword_results:
+    #     keyword_df = pd.DataFrame(keyword_results)
+    #     keyword_file = "result/test_1006/testkey_3493.xlsx"
+    #     if os.path.exists(keyword_file):
+    #         existing_keyword_df = pd.read_excel(keyword_file)
+    #         keyword_df = pd.concat([existing_keyword_df, keyword_df], ignore_index=True)
+    #     keyword_df.to_excel(keyword_file, index=False)
 
     print("finished")
 
 
 if __name__ == "__main__":
-    main("result/test_1006/testdata_3493.xlsx")
+    main("result/test_1006/testkey_3493.xlsx")
     # main("result/backup/第二次試驗/【測試資料】_60題.xlsx")
