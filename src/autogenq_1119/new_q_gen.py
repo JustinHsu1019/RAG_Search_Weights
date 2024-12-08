@@ -4,10 +4,11 @@ import os
 import openai
 from tqdm import tqdm
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from src.autogenq_1119.func_prompt import gene_q, change_str, condensed, keyword
-from src.autogenq_1119.aug_prompt import questionSynonymChange, complexQuestionX2, complexQuestionX3, questionWithKnowledgeStyle, questionWithSynonym
+from func_prompt import gene_q, change_str, condensed, keyword
+from aug_prompt import questionSynonymChange, complexQuestionX2, complexQuestionX3, questionWithKnowledgeStyle, questionWithSynonym
 
-import src.utils.config_log as config_log
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+import utils.config_log as config_log
 
 config, logger, CONFIG_PATH = config_log.setup_config_and_logging()
 config.read(CONFIG_PATH)
