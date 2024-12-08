@@ -207,7 +207,7 @@ if __name__ == "__main__":
 
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=210,
-        chunk_overlap=100,
+        chunk_overlap=1,
     )
     chunks = text_splitter.split_text(text)
 
