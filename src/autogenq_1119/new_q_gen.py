@@ -1,9 +1,17 @@
 import json
+import sys
+import os
 import openai
 from tqdm import tqdm
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-openai.api_key = "YOUR_OPENAI_API_KEY"
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+import utils.config_log as config_log
+
+config, logger, CONFIG_PATH = config_log.setup_config_and_logging()
+config.read(CONFIG_PATH)
+
+openai.api_key = config.get("OpenAI", "api_key")
 
 def call_gpt(prompt, system_prompt=""):
     """Calls the OpenAI API with the given prompt and returns the response."""
@@ -28,6 +36,7 @@ def generate_questions(chunks):
 {chunk}
 """
         question = call_gpt(prompt)
+        print(question)
         questions.append({
             "qid": f"Q{idx+1}",
             "parentqid": "",
@@ -230,35 +239,33 @@ def augment_question(question_obj, all_questions):
     return augmented_questions
 
 if __name__ == "__main__":
-    with open('input.txt', 'r', encoding='utf-8') as f:
+    with open('src/autogenq_1119/law_dataset(公務員相關法規).txt', 'r', encoding='utf-8') as f:
         text = f.read()
 
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=10000,
-        chunk_overlap=1000,
-        length_function=len,
-        separators=["\n\n", "\n", "。", "，", " ", ""]
+        chunk_size=210,
+        chunk_overlap=100,
     )
     chunks = text_splitter.split_text(text)
 
     questions = generate_questions(chunks)
 
-    all_augmented_questions = []
-    for question_obj in tqdm(questions, desc="Applying data augmentation"):
-        augmented = augment_question(question_obj, questions)
-        all_augmented_questions.extend(augmented)
+    # all_augmented_questions = []
+    # for question_obj in tqdm(questions, desc="Applying data augmentation"):
+    #     augmented = augment_question(question_obj, questions)
+    #     all_augmented_questions.extend(augmented)
 
-    output_data = []
-    for item in all_augmented_questions:
-        output_data.append({
-            "qid": item['qid'],
-            "parentqid": item['parentqid'],
-            "tagone": item['tagone'],
-            "tagtwo": item['tagtwo'],
-            "question": item['question']
-        })
+    # output_data = []
+    # for item in all_augmented_questions:
+    #     output_data.append({
+    #         "qid": item['qid'],
+    #         "parentqid": item['parentqid'],
+    #         "tagone": item['tagone'],
+    #         "tagtwo": item['tagtwo'],
+    #         "question": item['question']
+    #     })
 
-    with open('output.json', 'w', encoding='utf-8') as f:
-        json.dump(output_data, f, ensure_ascii=False, indent=2)
+    with open('src/autogenq_1119/output.json', 'w', encoding='utf-8') as f:
+        json.dump(questions, f, ensure_ascii=False, indent=2)
 
     print("Data augmentation complete. Output saved to output.json")
