@@ -252,6 +252,6 @@ if __name__ == "__main__":
         })
 
     with open('src/autogenq_1119/output.json', 'w', encoding='utf-8') as f:
-        json.dump(questions, f, ensure_ascii=False, indent=2)
+        json.dump(output_data, f, ensure_ascii=False, indent=2)
 
     print("Data augmentation complete. Output saved to output.json")
