@@ -170,6 +170,11 @@ def main(file_path, batch_size=100):
                 result = searcher.hybrid_search(
                     vector_results, keyword_results_search, alpha, num_results=1
                 )
+                print(result)
+                print(question)
+                print(answer)
+                print(keyword)
+                print("============================")
                 results.append(
                     {
                         "問題": question,
