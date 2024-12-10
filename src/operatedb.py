@@ -240,10 +240,7 @@ if __name__ == "__main__4":
 
 # ============= 12/10 新法規資料 =============
 
-if __name__ == "__main__5":
-    """
-    Vector Class
-    """
+if __name__ == "__main__":
     json_path = "data/chunk.json"
 
     # 讀取新的 JSON 資料
@@ -252,43 +249,15 @@ if __name__ == "__main__5":
 
     # 初始化 Weaviate Manager
     manager = WeaviateManager(config.get("Weaviate", "classnm"))
-
-    latest_p = None
+    managerkey = WeaviateManager(config.get("Weaviate", "keyclassnm"))
 
     for entry in data:
         print(entry["qid"])
         cont = entry["chunk"]
-        if cont != latest_p:
-            idd = entry["qid"]
-            manager.insert_data(idd, cont)
-            latest_p = cont
+        idd = entry["qid"]
+        ws, pos = silent_call_ckip_v2(cont)
+        cont_keyword = clean(ws[0], pos[0])
+        manager.insert_data(idd, cont)
+        managerkey.insert_data(idd, cont_keyword)
 
     print("資料已成功存入 Weaviate!")
-
-
-if __name__ == "__main__6":
-    """
-    CKIP Keyword Class
-    """
-    json_path = "data/chunk.json"
-
-    # 讀取新的 JSON 資料
-    with open(json_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-
-    # 初始化 Weaviate Manager
-    manager = WeaviateManager(config.get("Weaviate", "keyclassnm"))
-
-    latest_p = None
-
-    for entry in data:
-        print(entry["qid"])
-        cont = entry["chunk"]
-        if cont != latest_p:
-            ws, pos = silent_call_ckip_v2(cont)
-            cont_keyword = clean(ws[0], pos[0])
-            idd = entry["qid"]
-            manager.insert_data(idd, cont_keyword)
-            latest_p = cont
-
-    print("資料已成功存入 Key Weaviate!")
