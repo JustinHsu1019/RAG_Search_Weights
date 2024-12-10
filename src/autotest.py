@@ -2,6 +2,7 @@ import weaviate
 from langchain.embeddings import OpenAIEmbeddings
 import sys
 import os
+import json
 import warnings
 import pandas as pd
 from contextlib import redirect_stdout, redirect_stderr
@@ -48,7 +49,7 @@ class WeaviateSemanticSearch:
         self.classNm = classNm
         self.keyclassNm = keyclassNm
 
-    def vector_search(self, query_text, num_results=1000):
+    def vector_search(self, query_text, num_results=185):
         query_vector = self.embeddings.embed_query(query_text)
         vector_str = ",".join(map(str, query_vector))
 
@@ -70,7 +71,7 @@ class WeaviateSemanticSearch:
         results = search_results["data"]["Get"][self.classNm]
         return results
 
-    def keyword_search(self, query_text, num_results=1000):
+    def keyword_search(self, query_text, num_results=185):
         gql_query = f"""
         {{
             Get {{
@@ -121,12 +122,14 @@ class WeaviateSemanticSearch:
 
 
 def main(file_path, batch_size=100):
-    df = pd.read_excel(file_path)
-    questions = df["問題"].tolist()
-    answers = df["答案"].tolist()
+    with open(file_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    questions = [item["question"] for item in data]
+    answers = [item["parentqid"] for item in data]
 
     """ get keyword from excel """
-    keywords = df["keyword"].tolist()
+    # keywords = df["keyword"].tolist()
 
     """ for test mode"""
     # questions = questions[0:30]
@@ -140,16 +143,16 @@ def main(file_path, batch_size=100):
     results = []
     # keyword_results = []
 
-    for idx, (question, answer, keyword) in enumerate(
-        zip(questions, answers, keywords)
+    for idx, (question, answer) in enumerate(
+        zip(questions, answers)
     ):
         try:
             """ 中研院 CKIP 分詞 (目前使用中；但有過去數據就先直接使用，速度快) """
-            # ws = ws_driver([question])
-            # pos = pos_driver(ws)
+            ws = ws_driver([question])
+            pos = pos_driver(ws)
 
-            # ws, pos = silent_call_ckip_v2(question)
-            # keyword = clean(ws[0], pos[0])
+            ws, pos = silent_call_ckip_v2(question)
+            keyword = clean(ws[0], pos[0])
 
             """ LLM 分詞 (已棄用) """
             # keyword = call_aied(question)
@@ -161,8 +164,8 @@ def main(file_path, batch_size=100):
             #     'keyword_num': len(keyword.split())
             # })
 
-            vector_results = searcher.vector_search(question, 1000)
-            keyword_results_search = searcher.keyword_search(keyword, 1000)
+            vector_results = searcher.vector_search(question, 185)
+            keyword_results_search = searcher.keyword_search(keyword, 185)
             for alpha in [round(x * 0.1, 1) for x in range(10, -1, -1)]:
                 result = searcher.hybrid_search(
                     vector_results, keyword_results_search, alpha, num_results=1
@@ -178,7 +181,7 @@ def main(file_path, batch_size=100):
 
             if (idx + 1) % batch_size == 0:
                 result_df = pd.DataFrame(results)
-                result_file = "result/test_1006/testresult_3493.xlsx"
+                result_file = "result/test_1210/testresult_185.xlsx"
                 if os.path.exists(result_file):
                     existing_df = pd.read_excel(result_file)
                     result_df = pd.concat([existing_df, result_df], ignore_index=True)
@@ -198,7 +201,7 @@ def main(file_path, batch_size=100):
 
     if results:
         result_df = pd.DataFrame(results)
-        result_file = "result/test_1006/testresult_3493.xlsx"
+        result_file = "result/test_1210/testresult_185.xlsx"
         if os.path.exists(result_file):
             existing_df = pd.read_excel(result_file)
             result_df = pd.concat([existing_df, result_df], ignore_index=True)
@@ -216,5 +219,5 @@ def main(file_path, batch_size=100):
 
 
 if __name__ == "__main__":
-    main("result/test_1006/testkey_3493.xlsx")
+    main("data/question.json")
     # main("result/backup/第二次試驗/【測試資料】_60題.xlsx")
