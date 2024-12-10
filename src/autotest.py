@@ -116,7 +116,7 @@ class WeaviateSemanticSearch:
         sorted_combined_scores = sorted(
             combined_scores.items(), key=lambda x: x[1], reverse=True
         )
-        top_ids = [item[0] for item in sorted_combined_scores[:num_results]]
+        top_ids = [item[0] for item in sorted_combined_scores[:num_results]] # 第一個值是 最高分的結果
 
         return top_ids
 
