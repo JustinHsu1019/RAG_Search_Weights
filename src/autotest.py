@@ -146,63 +146,63 @@ def main(file_path, batch_size=100):
     for idx, (question, answer) in enumerate(
         zip(questions, answers)
     ):
-        try:
-            """ 中研院 CKIP 分詞 (目前使用中；但有過去數據就先直接使用，速度快) """
-            ws = ws_driver([question])
-            pos = pos_driver(ws)
+        # try:
+        """ 中研院 CKIP 分詞 (目前使用中；但有過去數據就先直接使用，速度快) """
+        ws = ws_driver([question])
+        pos = pos_driver(ws)
 
-            ws, pos = silent_call_ckip_v2(question)
-            keyword = clean(ws[0], pos[0])
+        ws, pos = silent_call_ckip_v2(question)
+        keyword = clean(ws[0], pos[0])
 
-            """ LLM 分詞 (已棄用) """
-            # keyword = call_aied(question)
+        """ LLM 分詞 (已棄用) """
+        # keyword = call_aied(question)
 
-            # keyword_results.append({
-            #     '問題': question,
-            #     '答案': answer,
-            #     'keyword': keyword,
-            #     'keyword_num': len(keyword.split())
-            # })
+        # keyword_results.append({
+        #     '問題': question,
+        #     '答案': answer,
+        #     'keyword': keyword,
+        #     'keyword_num': len(keyword.split())
+        # })
 
-            vector_results = searcher.vector_search(question, 185)
-            keyword_results_search = searcher.keyword_search(keyword, 185)
-            for alpha in [round(x * 0.1, 1) for x in range(10, -1, -1)]:
-                result = searcher.hybrid_search(
-                    vector_results, keyword_results_search, alpha, num_results=1
-                )
-                print(result)
-                print(question)
-                print(answer)
-                print(keyword)
-                print("============================")
-                results.append(
-                    {
-                        "問題": question,
-                        "答案": answer,
-                        "關鍵字": keyword,
-                        f"檢索結果_{alpha}": result,
-                    }
-                )
+        vector_results = searcher.vector_search(question, 185)
+        keyword_results_search = searcher.keyword_search(keyword, 185)
+        for alpha in [round(x * 0.1, 1) for x in range(10, -1, -1)]:
+            result = searcher.hybrid_search(
+                vector_results, keyword_results_search, alpha, num_results=1
+            )
+            print(result)
+            print(question)
+            print(answer)
+            print(keyword)
+            print("============================")
+            results.append(
+                {
+                    "問題": question,
+                    "答案": answer,
+                    "關鍵字": keyword,
+                    f"檢索結果_{alpha}": result,
+                }
+            )
 
-            if (idx + 1) % batch_size == 0:
-                result_df = pd.DataFrame(results)
-                result_file = "result/test_1210/testresult_185.xlsx"
-                if os.path.exists(result_file):
-                    existing_df = pd.read_excel(result_file)
-                    result_df = pd.concat([existing_df, result_df], ignore_index=True)
-                result_df.to_excel(result_file, index=False)
-                results = []
+        if (idx + 1) % batch_size == 0:
+            result_df = pd.DataFrame(results)
+            result_file = "result/test_1210/testresult_185.xlsx"
+            if os.path.exists(result_file):
+                existing_df = pd.read_excel(result_file)
+                result_df = pd.concat([existing_df, result_df], ignore_index=True)
+            result_df.to_excel(result_file, index=False)
+            results = []
 
-                # keyword_df = pd.DataFrame(keyword_results)
-                # keyword_file = "result/test_1006/testkey_3493.xlsx"
-                # if os.path.exists(keyword_file):
-                #     existing_keyword_df = pd.read_excel(keyword_file)
-                #     keyword_df = pd.concat([existing_keyword_df, keyword_df], ignore_index=True)
-                # keyword_df.to_excel(keyword_file, index=False)
-                # keyword_results = []
+            # keyword_df = pd.DataFrame(keyword_results)
+            # keyword_file = "result/test_1006/testkey_3493.xlsx"
+            # if os.path.exists(keyword_file):
+            #     existing_keyword_df = pd.read_excel(keyword_file)
+            #     keyword_df = pd.concat([existing_keyword_df, keyword_df], ignore_index=True)
+            # keyword_df.to_excel(keyword_file, index=False)
+            # keyword_results = []
 
-        except Exception as e:
-            logger.error(f"Error processing question {idx + 1}: {e}")
+        # except Exception as e:
+        #     logger.error(f"Error processing question {idx + 1}: {e}")
 
     if results:
         result_df = pd.DataFrame(results)
