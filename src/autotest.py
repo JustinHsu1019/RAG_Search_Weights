@@ -125,6 +125,7 @@ def main(file_path, batch_size=100):
     with open(file_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
+    qids = [item["qid"] for item in data]
     questions = [item["question"] for item in data]
     answers = [item["parentqid"] for item in data]
 
@@ -143,8 +144,8 @@ def main(file_path, batch_size=100):
     results = []
     # keyword_results = []
 
-    for idx, (question, answer) in enumerate(
-        zip(questions, answers)
+    for idx, (question, answer, qid) in enumerate(
+        zip(questions, answers, qids)
     ):
         try:
             """ 中研院 CKIP 分詞 (目前使用中；但有過去數據就先直接使用，速度快) """
@@ -170,6 +171,7 @@ def main(file_path, batch_size=100):
                 result = searcher.hybrid_search(
                     vector_results, keyword_results_search, alpha, num_results=1
                 )
+                print(qid)
                 print(result)
                 print(question)
                 print(answer)
@@ -177,6 +179,7 @@ def main(file_path, batch_size=100):
                 print("============================")
                 results.append(
                     {
+                        "QID": qid,
                         "問題": question,
                         "答案": answer,
                         "關鍵字": keyword,
