@@ -256,6 +256,7 @@ if __name__ == "__main__5":
     latest_p = None
 
     for entry in data:
+        print(entry["qid"])
         cont = entry["chunk"]
         if cont != latest_p:
             idd = entry["qid"]
