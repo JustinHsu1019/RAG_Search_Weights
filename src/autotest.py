@@ -89,7 +89,7 @@ class WeaviateSemanticSearch:
         results = search_results["data"]["Get"][self.keyclassNm]
         return results
 
-    def hybrid_search(self, vector_results, keyword_results, alpha, num_results=5):
+    def hybrid_search(self, vector_results, keyword_results, alpha, num_results=3):
         vector_scores = {
             result["uuid"]: float(result["_additional"]["score"])
             for result in vector_results
@@ -169,7 +169,7 @@ def main(file_path, batch_size=100):
             keyword_results_search = searcher.keyword_search(keyword, 185)
             for alpha in [round(x * 0.1, 1) for x in range(10, -1, -1)]:
                 result = searcher.hybrid_search(
-                    vector_results, keyword_results_search, alpha, num_results=1
+                    vector_results, keyword_results_search, alpha, num_results=3
                 )
                 print(qid)
                 print(result)
@@ -189,7 +189,7 @@ def main(file_path, batch_size=100):
 
             if (idx + 1) % batch_size == 0:
                 result_df = pd.DataFrame(results)
-                result_file = "result/test_1210/testresult_185.xlsx"
+                result_file = "result/test_1210/testresult_185_top3.xlsx"
                 if os.path.exists(result_file):
                     existing_df = pd.read_excel(result_file)
                     result_df = pd.concat([existing_df, result_df], ignore_index=True)
@@ -209,7 +209,7 @@ def main(file_path, batch_size=100):
 
     if results:
         result_df = pd.DataFrame(results)
-        result_file = "result/test_1210/testresult_185.xlsx"
+        result_file = "result/test_1210/testresult_185_top3.xlsx"
         if os.path.exists(result_file):
             existing_df = pd.read_excel(result_file)
             result_df = pd.concat([existing_df, result_df], ignore_index=True)
