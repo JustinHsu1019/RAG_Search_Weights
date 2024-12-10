@@ -282,6 +282,7 @@ if __name__ == "__main__6":
     latest_p = None
 
     for entry in data:
+        print(entry["qid"])
         cont = entry["chunk"]
         if cont != latest_p:
             ws, pos = silent_call_ckip_v2(cont)
