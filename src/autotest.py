@@ -68,6 +68,7 @@ class WeaviateSemanticSearch:
         }}
         """
         search_results = self.client.query.raw(gql_query)
+        print(search_results)
         results = search_results["data"]["Get"][self.classNm]
         return results
 
@@ -86,6 +87,7 @@ class WeaviateSemanticSearch:
         }}
         """
         search_results = self.client.query.raw(gql_query)
+        print(search_results)
         results = search_results["data"]["Get"][self.keyclassNm]
         return results
 
