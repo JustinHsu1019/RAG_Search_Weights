@@ -69,6 +69,6 @@ def calculate_accuracy_by_tagone(file_path, question_json_path):
 
 if __name__ == "__main__":
     # 假設您的檔案路徑如下
-    result = calculate_accuracy_by_tagone("result/test_1210/testresult_185.xlsx", "data/question.json")
+    result = calculate_accuracy_by_tagone("result/test_1210/testresult_185_top3.xlsx", "data/question.json")
     for tagone, acc in result.items():
         print(f"Tagone: {tagone}, 準確率: {acc:.2%}")

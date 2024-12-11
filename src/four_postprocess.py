@@ -171,6 +171,6 @@ def analyze(file_path, question_json_path):
 
 if __name__ == "__main__":
     # 調整為您的檔案路徑
-    excel_file_path = "result/test_1210/testresult_185.xlsx"
+    excel_file_path = "result/test_1210/testresult_185_top3.xlsx"
     question_json_path = "data/question.json"
     analyze(excel_file_path, question_json_path)
