@@ -1,0 +1,1297 @@
+[
+  {
+    "qid": "Q1_synonympart_1",
+    "parentqid": "Q1",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "政府職員 的 委任 應 根據 什麼 準則 來 執行"
+  },
+  {
+    "qid": "Q2_synonympart_2",
+    "parentqid": "Q2",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "什麼 是 工作 類別"
+  },
+  {
+    "qid": "Q3_synonympart_3",
+    "parentqid": "Q3",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "根據 條款 任命 政府官員 時 應該 注意 哪些 方面"
+  },
+  {
+    "qid": "Q4_synonympart_4",
+    "parentqid": "Q4",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "每部門 處理 員工 聘用 之前 道德 忠誠 調查 時候 應該 怎麼 面對 當事者 有 不利 狀況 情形"
+  },
+  {
+    "qid": "Q5_synonympart_5",
+    "parentqid": "Q5",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "職級 劃分 哪些 分類 最高 職級 第幾 職級"
+  },
+  {
+    "qid": "Q6_synonympart_6",
+    "parentqid": "Q6",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "單位 機構 制定 名單 當 因為 工作 需求 或 狀況 特別 能夠 採用 什麼 方法"
+  },
+  {
+    "qid": "Q7_synonympart_7",
+    "parentqid": "Q7",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "機構 組織 法律 設定 職位 等級 中華民國 一九九六年 考試院 修改 職位 等級 表格 不符 暫時 適用 哪個 規範"
+  },
+  {
+    "qid": "Q8_synonympart_8",
+    "parentqid": "Q8",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "每個 機構 在 工作 職責 變更 時 需 做 哪些 修改"
+  },
+  {
+    "qid": "Q9_synonympart_9",
+    "parentqid": "Q9",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "哪些 狀況 特殊 性質 職位 人員 任命 需要 遵守 法律 特殊 選拔 規則"
+  },
+  {
+    "qid": "Q10_synonympart_10",
+    "parentqid": "Q10",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "每個 單位 初次 職位 人員 該 如何 進行 分派 任用"
+  },
+  {
+    "qid": "Q11_synonympart_11",
+    "parentqid": "Q11",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "誰 負責 訂定 分派 訓練 、 分送 任命 程序 及 相關 事宜 的 方法 ？"
+  },
+  {
+    "qid": "Q12_synonympart_12",
+    "parentqid": "Q12",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依據 條款 機構 首長 何種 狀況 應該 立即 解除 機密 職位 人員"
+  },
+  {
+    "qid": "Q13_synonympart_13",
+    "parentqid": "Q13",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "經過 高級 測試 一級 測試 人員 獲得 哪一種 聘用 資格"
+  },
+  {
+    "qid": "Q14_synonympart_14",
+    "parentqid": "Q14",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "高級 測驗 根據 學位 分 一 二 等級 測驗 者 其 合格 人員 各自 取得 什麼 職位 資格"
+  },
+  {
+    "qid": "Q15_synonympart_15",
+    "parentqid": "Q15",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "特別 測驗 丙級 測驗 通過者 能 獲得 什麼 聘用 條件"
+  },
+  {
+    "qid": "Q16_synonympart_16",
+    "parentqid": "Q16",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法律 實施 之前 合法 測驗 合格 獲得 什麼 類型 的 聘用 條件"
+  },
+  {
+    "qid": "Q17_synonympart_17",
+    "parentqid": "Q17",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "政府 人員 職位 的 提升 需要 通過 什麼 測驗 或 訓練"
+  },
+  {
+    "qid": "Q18_synonympart_18",
+    "parentqid": "Q18",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "銓敘部 銓敘 審定 合格 實授 現任 薦任 職等 職務 人員 符合 條件 取得 升任 簡任 任用 資格"
+  },
+  {
+    "qid": "Q19_synonympart_19",
+    "parentqid": "Q19",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "什麼 規定 使 人 滿足 適任 正式 派任 推薦 擔任 第九 等級 職位 的 條件"
+  },
+  {
+    "qid": "Q20_synonympart_20",
+    "parentqid": "Q20",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "之前 課程 人員 如果 沒有 按照 規定 課程 或者 課程 成績 不及格 將會 有 哪些 結果"
+  },
+  {
+    "qid": "Q21_synonympart_21",
+    "parentqid": "Q21",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "銓敘部 合格 實授 現任 委任 資格 升任 薦任 任用 條件"
+  },
+  {
+    "qid": "Q22_synonympart_22",
+    "parentqid": "Q22",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依據 論文 完成 高等 中學 結束 後 需求 達成 什麼 規範 才 符合 標準"
+  },
+  {
+    "qid": "Q23_synonympart_23",
+    "parentqid": "Q23",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "擁有 碩士 超過 學歷 以及 最近 五年 推薦 第七 等級 職位 年終 考核 符合 哪些 要求 的 成員 可以 擔當 最多 為 推薦 第八 等級 之下 職位"
+  },
+  {
+    "qid": "Q24_synonympart_24",
+    "parentqid": "Q24",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "次要 項目 以及 第六 條目 晉級 官位 培訓 相關 規則 由 哪個 單位 制定"
+  },
+  {
+    "qid": "Q25_synonympart_25",
+    "parentqid": "Q25",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "當前 任職 人 在 調動 時 哪些 職位 人 可以 在 各 職業 系列 之 職責 間 調動"
+  },
+  {
+    "qid": "Q26_synonympart_26",
+    "parentqid": "Q26",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "何種 狀況 機構 長官 及 副長官 得以 調動 該 機構 相同 工作 列別 外 其他 工作"
+  },
+  {
+    "qid": "Q27_synonympart_27",
+    "parentqid": "Q27",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "測驗 通過 人員 可 被 調動 的 機構 和 職業 等 範疇 應 如何 確定"
+  },
+  {
+    "qid": "Q28_synonympart_28",
+    "parentqid": "Q28",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "初次 任職 官員 什麼 條件 試行 半年"
+  },
+  {
+    "qid": "Q29_synonympart_29",
+    "parentqid": "Q29",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "測試 員工 測試 期間 缺勤 達到 什麼 程度 會 被 評價 為 測試 表現 不合格"
+  },
+  {
+    "qid": "Q30_synonympart_30",
+    "parentqid": "Q30",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "測試 成果 未通過 成員 在 何種 狀況 下 能夠 對 評分 委員會 表達 看法 和 辯解"
+  },
+  {
+    "qid": "Q31_synonympart_31",
+    "parentqid": "Q31",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "測試 員工 時段 限制"
+  },
+  {
+    "qid": "Q32_synonympart_32",
+    "parentqid": "Q32",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "條款 機構 情形 指定 不具備 資格 人員 代理 擔任 職位"
+  },
+  {
+    "qid": "Q33_synonympart_33",
+    "parentqid": "Q33",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "何種 狀況 受 派遣 機構 約束 的 人士 能 轉任 到 子女 實際 居住地 的 其他 機構 工作"
+  },
+  {
+    "qid": "Q34_synonympart_34",
+    "parentqid": "Q34",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "文章 公職人員 什麼 情形 名指 商業 調動"
+  },
+  {
+    "qid": "Q35_synonympart_35",
+    "parentqid": "Q35",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "根據 條款 哪些 人士 能夠 給予 更改 任用"
+  },
+  {
+    "qid": "Q36_synonympart_36",
+    "parentqid": "Q36",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "如果 確實 有 特殊 情況 未能 在 三個 月內 提交 審核 代理 公職 人員 的 案件 最多 能夠 延期 多長 時間"
+  },
+  {
+    "qid": "Q37_synonympart_37",
+    "parentqid": "Q37",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "每個 單位 領導 的 職員 倘若 沒有 在 規定 時間 內 遞交 審核 試用 並 打算 聘任 員工 時 該 單位 能夠 採取 哪些 辦法"
+  },
+  {
+    "qid": "Q38_synonympart_38",
+    "parentqid": "Q38",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "公職人員 依據 法規 提出 補救"
+  },
+  {
+    "qid": "Q39_synonympart_39",
+    "parentqid": "Q39",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "單位 領導 伴侶 親屬 何種 狀況 必須 迴避 聘用"
+  },
+  {
+    "qid": "Q40_synonympart_40",
+    "parentqid": "Q40",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "何時 民意 選擇 領導者 下屆 投票 期間 時間 範疇"
+  },
+  {
+    "qid": "Q41_synonympart_41",
+    "parentqid": "Q41",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "文章 中央 各級 機關 政務 首長 情況 次屆 選舉 當選人 名單 公告 當選人 宣誓 就職 期間 離職"
+  },
+  {
+    "qid": "Q42_synonympart_42",
+    "parentqid": "Q42",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "派駐 人力 資格 何種 條件 可以 不受 首項 規範 約束"
+  },
+  {
+    "qid": "Q43_synonympart_43",
+    "parentqid": "Q43",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "哪些 狀況 下 不能 任職 為 公職 人員"
+  },
+  {
+    "qid": "Q44_synonympart_44",
+    "parentqid": "Q44",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "什麼時候 不 涵蓋 被 判緩刑者"
+  },
+  {
+    "qid": "Q45_synonympart_45",
+    "parentqid": "Q45",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "何種 狀況 中華民國 國籍 並且 外國 國籍 人士 仍然 能夠 被 聘用 為 政府 人員"
+  },
+  {
+    "qid": "Q46_synonympart_46",
+    "parentqid": "Q46",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "官員 何種 條件 應 解除职务"
+  },
+  {
+    "qid": "Q47_synonympart_47",
+    "parentqid": "Q47",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "之前 人 员 如果 因为 第一 项 第二 项 情况 被 撤销 聘用 应 进行 什么 样的 方法"
+  },
+  {
+    "qid": "Q48_synonympart_48",
+    "parentqid": "Q48",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "官員 原因 事件 申請 保留職位 停止薪水"
+  },
+  {
+    "qid": "Q49_synonympart_49",
+    "parentqid": "Q49",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "機構 雇用 人員 違背 法律 規定 部門 處置"
+  },
+  {
+    "qid": "Q50_synonympart_50",
+    "parentqid": "Q50",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "專業 員工 規則 取消 之前 根據 該 規則 審批 確認 案例 人員 應該 如何 處理"
+  },
+  {
+    "qid": "Q51_synonympart_51",
+    "parentqid": "Q51",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依據 條款 條 文項 需求 審核 決定 人士 能夠 調動 公共 醫療 機關 外部 醫療 管理 職位"
+  },
+  {
+    "qid": "Q52_synonympart_52",
+    "parentqid": "Q52",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "條文 提及 邊疆 地區 工作人員 法規 作廢 依據 審核 決定 地方 工作人員 如何 持續 聘用"
+  },
+  {
+    "qid": "Q53_synonympart_53",
+    "parentqid": "Q53",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "原本 依據 任用 規定 銓敘 審核 決定 有案 的 現任 人員 在 任用 規定 廢除 後 如何 處理"
+  },
+  {
+    "qid": "Q54_synonympart_54",
+    "parentqid": "Q54",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法規 取消 滿 足年 之 次日 開始 臨時 全職 工作 任用 人員 能夠 停留 多久"
+  },
+  {
+    "qid": "Q55_synonympart_55",
+    "parentqid": "Q55",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "項目 條款 設定 暫時 單位 調用 規則 停止 多長 修訂 機構 法律 任命 單位"
+  },
+  {
+    "qid": "Q56_synonympart_56",
+    "parentqid": "Q56",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "本法 中華民國 九十九年 七月 十三日 修改 之 第二十九條 條款 何時 開始 實施"
+  },
+  {
+    "qid": "Q57_synonympart_57",
+    "parentqid": "Q57",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "公職人員 聘任 法規實施 細則 依據 公職人員 聘任 法規的 哪一款 擬定的"
+  },
+  {
+    "qid": "Q58_synonympart_58",
+    "parentqid": "Q58",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "這 部門 稱作 每一 單位 涵蓋 哪些 組織"
+  },
+  {
+    "qid": "Q59_synonympart_59",
+    "parentqid": "Q59",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法律 條款 條目 款項 預定 人士 知識 能力 經歷 健康 符合 哪些 文書 規範"
+  },
+  {
+    "qid": "Q60_synonympart_60",
+    "parentqid": "Q60",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法令 條目 項目 品性 忠實 調查 核查 定義"
+  },
+  {
+    "qid": "Q61_synonympart_61",
+    "parentqid": "Q61",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "好處人 需要 如何 處理 審查"
+  },
+  {
+    "qid": "Q62_synonympart_62",
+    "parentqid": "Q62",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "利害關係人 能夠 使用 什麼 方法 來 表達 看法 和 辯解"
+  },
+  {
+    "qid": "Q63_synonympart_63",
+    "parentqid": "Q63",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法律 條款 條件 職位 列表 應該 如何 制定"
+  },
+  {
+    "qid": "Q64_synonympart_64",
+    "parentqid": "Q64",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法律 條款 條款 項目 所謂 級別 規範 工作 崗位 列表 條款 所謂 系列 群組 系列 描述 由 哪個 部門 草擬 並 呈報 哪個 機關 批准"
+  },
+  {
+    "qid": "Q65_synonympart_65",
+    "parentqid": "Q65",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依據 文章 職位 歸類 方法 單位 訂定"
+  },
+  {
+    "qid": "Q66_synonympart_66",
+    "parentqid": "Q66",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "文章 法律 人員 獲得 晉升 任職 資格"
+  },
+  {
+    "qid": "Q67_synonympart_67",
+    "parentqid": "Q67",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依據 紙本 什麼 人員 享有 簡便 第十 等級 職位 的 聘用 條件"
+  },
+  {
+    "qid": "Q68_synonympart_68",
+    "parentqid": "Q68",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "文章 若非 屬 本法 第三十二條 第三十三條 所列 任用 法律 法律 主管 機關 特別 遴用 規定 制定 增訂 修正 應 多久 時間內 會商 銓敘部 協調 主管 機關"
+  },
+  {
+    "qid": "Q69_synonympart_69",
+    "parentqid": "Q69",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依據 情形 下 未有 計劃 職位 等級 聘用 資格 者 能夠 被 權限 處理"
+  },
+  {
+    "qid": "Q70_synonympart_70",
+    "parentqid": "Q70",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法令 條款 機構 官員 離任 機密 人士 誰 解除 職務"
+  },
+  {
+    "qid": "Q71_synonympart_71",
+    "parentqid": "Q71",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "各 機構 沒有 聘任 資格 的 初次 機密 人員 轉任 或者 更改 任命 其他 受 法律 規定 資格 限制 的 職位 時 應該 怎麼 處置"
+  },
+  {
+    "qid": "Q72_synonympart_72",
+    "parentqid": "Q72",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依據 法律 第十三條 第四款 什麼 狀況 已 經過 各 級別 測試 職位 人員 依然 適用 舊 規範"
+  },
+  {
+    "qid": "Q73_synonympart_73",
+    "parentqid": "Q73",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法律 條款 所謂 相應 高級 測試 以上 特殊 測試 涵蓋 哪些 測試"
+  },
+  {
+    "qid": "Q74_synonympart_74",
+    "parentqid": "Q74",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "哪些 單位 擔當 制定 彼此 調任 時 計算 年資 規定 官員 職位 級別 的 方法"
+  },
+  {
+    "qid": "Q75_synonympart_75",
+    "parentqid": "Q75",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "銓敘部 審定 合格 實授 取得 較高官等 任用 資格 依法 調任 職務 人員 考績 年資 計算"
+  },
+  {
+    "qid": "Q76_synonympart_76",
+    "parentqid": "Q76",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "本法 第十七 條 第六 項 第一 款 所 稱 相當 普通 測試 之 特種 測試 包括 哪些 測試"
+  },
+  {
+    "qid": "Q77_synonympart_77",
+    "parentqid": "Q77",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "何謂 法律 十七條 七項 所指 推薦 七級 工作 年底 評估"
+  },
+  {
+    "qid": "Q78_synonympart_78",
+    "parentqid": "Q78",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法律 第十八條 第一段 第三項 所述 調整 任命 低於 一級 職位 限定 意指 何種 狀況"
+  },
+  {
+    "qid": "Q79_synonympart_79",
+    "parentqid": "Q79",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "哪些 單位 負責 擬定 現任 公職人員 調動 時 其 職責 專業 確認 標準 重新 調動 限制 及 相關 事項 的 方法"
+  },
+  {
+    "qid": "Q80_synonympart_80",
+    "parentqid": "Q80",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "測試 員工 在 何種 狀況 下 需要 隨時 給予 評估 解雇"
+  },
+  {
+    "qid": "Q81_synonympart_81",
+    "parentqid": "Q81",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "嘗試 員工 在 嘗試 階段 職位 有 變更 時 應該 如何 處理 其 年齡 計算 和 嘗試 成果 的 確認"
+  },
+  {
+    "qid": "Q82_synonympart_82",
+    "parentqid": "Q82",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法律 第二十條 第六款 測試 成就 不合格 員工 如果 未依規定 提交 重新審查 解僱命令 從 何時 開始 實施"
+  },
+  {
+    "qid": "Q83_synonympart_83",
+    "parentqid": "Q83",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "何時 開始 終止 其 職責"
+  },
+  {
+    "qid": "Q84_synonympart_84",
+    "parentqid": "Q84",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "條文 提及 業務 處理 需要 步驟"
+  },
+  {
+    "qid": "Q85_synonympart_85",
+    "parentqid": "Q85",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "各 單位 規劃 人士 審核 時候 除了 規劃 人士 審核 表單 仍然 必須 呈交 哪些 檔案"
+  },
+  {
+    "qid": "Q86_synonympart_86",
+    "parentqid": "Q86",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "假如 官員 提交 審核 經 行政部門 人事審核 確認 後 被 發現 存在 偽造 或 修改 證明 文件 的 情況 會 有 哪些 處理 手段"
+  },
+  {
+    "qid": "Q87_synonympart_87",
+    "parentqid": "Q87",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法律 條款 規定 關聯 國家 安全 機密 單位 職位 涵蓋 單位"
+  },
+  {
+    "qid": "Q88_synonympart_88",
+    "parentqid": "Q88",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "哪些 小組 和 隸屬 單位 被 列 在 文獻 中"
+  },
+  {
+    "qid": "Q89_synonympart_89",
+    "parentqid": "Q89",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "核准 行政機關 設立 哪些 組織 職位"
+  },
+  {
+    "qid": "Q90_synonympart_90",
+    "parentqid": "Q90",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "根據 條款 哪些 人士 任命 法規 不得 與 此法 關聯 任用 條件 規定 抵觸"
+  },
+  {
+    "qid": "Q91_synonympart_91",
+    "parentqid": "Q91",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法令 條文 項目 款項 目次 臨時 機構 派遣 人力 資源 使用 規則 作廢 之日 年限 內 可以 適用 原使用 規則 及其 實施 細則 繼續 使用"
+  },
+  {
+    "qid": "Q92_synonympart_92",
+    "parentqid": "Q92",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "當前 職位 公職 人員 的 調動 應 根據 哪 一 條 法律 處理"
+  },
+  {
+    "qid": "Q93_synonympart_93",
+    "parentqid": "Q93",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依照 條款 現任 政府職員 意指 哪些 人員"
+  },
+  {
+    "qid": "Q94_synonympart_94",
+    "parentqid": "Q94",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "哪些 現任 公職 人員 能夠 被 視為 具有 擬任用 的 簡單 職位 職系 專業"
+  },
+  {
+    "qid": "Q95_synonympart_95",
+    "parentqid": "Q95",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "哪些 學位 資格 符合 調動 工作 崗位 屬性的 需求"
+  },
+  {
+    "qid": "Q96_synonympart_96",
+    "parentqid": "Q96",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依據 文章 近年 在 大學 學系 學習 多少 學時 以上 課程 才 符合 轉任 職位 工作 特性 類似 要求"
+  },
+  {
+    "qid": "Q97_synonympart_97",
+    "parentqid": "Q97",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依據 文獻 符合 什麼 標準 的 人員 能夠 轉換 工作"
+  },
+  {
+    "qid": "Q98_synonympart_98",
+    "parentqid": "Q98",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "近年 政府 部門 主辦 教育 訓練 機構 接受 調職 工作 職系 性質 相似 教育 訓練 專業 課程 累計 需要 達到 多少 小時 以上 才能 被 認可"
+  },
+  {
+    "qid": "Q99_synonympart_99",
+    "parentqid": "Q99",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "目前 在職 公務 員工 如果 擁有 哪個 經歷 才 能 被 認定 擁有 擬 調動 的 推薦 工作 職業 技能"
+  },
+  {
+    "qid": "Q100_synonympart_100",
+    "parentqid": "Q100",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "何種 狀況 下 修讀 課程 相同 或 相近 之 學分 最高 以 六 學分 為 限"
+  },
+  {
+    "qid": "Q101_synonympart_101",
+    "parentqid": "Q101",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依據 文獻 哪些 崗位 或 層級 的 經歷 能夠 思考 調動 到 類似 專業 的 職責"
+  },
+  {
+    "qid": "Q102_synonympart_102",
+    "parentqid": "Q102",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "當前 在職 公職 人員 需要 具備 哪些 資格 才能 被 認可 擁有 計劃 調動 的 指定 職位 工作 專業技能"
+  },
+  {
+    "qid": "Q103_synonympart_103",
+    "parentqid": "Q103",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "文章 調任 資格 條件 要求 申請者 高級中學 高級職業學校 畢業 科別 性質 調任 職務 職系 性質 相近"
+  },
+  {
+    "qid": "Q104_synonympart_104",
+    "parentqid": "Q104",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "當前 工作 人員 需要 符合 哪些 要求 才能 被 認定 具備 該 機構 職位 等級 相同 或 最 高 等級 相同 的 非 專業 類 別 職位 的 職業 專業技能"
+  },
+  {
+    "qid": "Q105_synonympart_105",
+    "parentqid": "Q105",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依 據 規則 調動 人員 需要 在 工作 滿 足 多長 時間 後 才 可能 再次 調動 成 相同 職位 的 其他 部門 工作"
+  },
+  {
+    "qid": "Q106_synonympart_106",
+    "parentqid": "Q106",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "在職 公職 人員 轉任 方法 根據 哪 一項 法律 規定 制定"
+  },
+  {
+    "qid": "Q107_synonympart_107",
+    "parentqid": "Q107",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "現任 公職人員 在 本 法律 實施 前 經 選拔 機構 核定 的 職級 改任 應 根據 什麼 辦理"
+  },
+  {
+    "qid": "Q108_synonympart_108",
+    "parentqid": "Q108",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "原本 依據 具備 兼任 目前 職位 公務員 其 原本 評定 級別 應該 如何 更改 任用"
+  },
+  {
+    "qid": "Q109_synonympart_109",
+    "parentqid": "Q109",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "不達 工作 位階 表格 所列 那個 工作 最低 職位 人員 在 何種 狀況 下 能夠 臨時管理 高兩個 職位 以上 的 工作"
+  },
+  {
+    "qid": "Q110_synonympart_110",
+    "parentqid": "Q110",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "假如 一名 政府 官員 原始 審核 等級 超越 職位 列表 所列 等級 他們 任命 條件 會 如何 處置"
+  },
+  {
+    "qid": "Q111_synonympart_111",
+    "parentqid": "Q111",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "情形 報請 負責 部門 批准 才能 處理 高級 職位"
+  },
+  {
+    "qid": "Q112_synonympart_112",
+    "parentqid": "Q112",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "當前 在職 公職 人員 在 哪些 狀況 下 能夠 以 其 擁有 高 級別 資格 轉任"
+  },
+  {
+    "qid": "Q113_synonympart_113",
+    "parentqid": "Q113",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "執行 工作 分級 時 如果 某 人 的 當前 工作 在 第九 等級 或 第五 等級 以下 他 的 工作 會 被 怎樣 處理"
+  },
+  {
+    "qid": "Q114_synonympart_114",
+    "parentqid": "Q114",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法律 實施 之前 分類 職位 五等級 或 九等級 資格 代理 六等級 或 十等級 職位 人員 何種 情況 可以 暫時 批准 繼續 代理"
+  },
+  {
+    "qid": "Q115_synonympart_115",
+    "parentqid": "Q115",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "測驗 雇主 現在 雇主 晉升 指派 等級 除了 評價 要求 需要 通過 什麼 測驗"
+  },
+  {
+    "qid": "Q116_synonympart_116",
+    "parentqid": "Q116",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "條文 適合 調動 批准 註冊 現有 員工"
+  },
+  {
+    "qid": "Q117_synonympart_117",
+    "parentqid": "Q117",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "當前 在職 確認 實習 員工 調職 時 可能 如何 處理 他們 工齡"
+  },
+  {
+    "qid": "Q118_synonympart_118",
+    "parentqid": "Q118",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "政府官員 依照 政府官員 職責法 第 一 條款 應當 怎樣 履行 他們 職責"
+  },
+  {
+    "qid": "Q119_synonympart_119",
+    "parentqid": "Q119",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法律 適用 對象 包含 什麼 中央 研究 所 人員"
+  },
+  {
+    "qid": "Q120_synonympart_120",
+    "parentqid": "Q120",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "政府官員 以為 上司 指令 不合法 應該 怎樣 辦理"
+  },
+  {
+    "qid": "Q121_synonympart_121",
+    "parentqid": "Q121",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "假如 官員 接到 兩層 上司 同步 發布的 指令 ， 應該 以 何人 上司的 指令 作為 標準"
+  },
+  {
+    "qid": "Q122_synonympart_122",
+    "parentqid": "Q122",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依照 條款 公職人員 離開 工作 之後 是否 依然 承擔 保持 行政 秘密 責任"
+  },
+  {
+    "qid": "Q123_synonympart_123",
+    "parentqid": "Q123",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "官員 執行 工作 應 當 怎樣 防止 侵害 其他人"
+  },
+  {
+    "qid": "Q124_synonympart_124",
+    "parentqid": "Q124",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "官員 接受 人事 任命 通常 需要 多久 內 報到"
+  },
+  {
+    "qid": "Q125_synonympart_125",
+    "parentqid": "Q125",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "官員 何時 必須 獲得 單位 批准 離開 崗位"
+  },
+  {
+    "qid": "Q126_synonympart_126",
+    "parentqid": "Q126",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "行政人員 每天 工作 時間 和 每星期 休假 天數 在 何種 情況 下 能夠 變更"
+  },
+  {
+    "qid": "Q127_synonympart_127",
+    "parentqid": "Q127",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "每個 層級 教育 管理 部門 怎樣 在 保持 全年 工作 總 小時 的 條件 下 更改 學校 的 工作 時間 和 假期 數量"
+  },
+  {
+    "qid": "Q128_synonympart_128",
+    "parentqid": "Q128",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "機構 指定 公職人員 加班 延長 工作 時數 每日 限制 幾 小時"
+  },
+  {
+    "qid": "Q129_synonympart_129",
+    "parentqid": "Q129",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "輪流 運行 公職人員 更改 時段 時間 需要 幾多 小時 連續 休息 時間"
+  },
+  {
+    "qid": "Q130_synonympart_130",
+    "parentqid": "Q130",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "前兩項工作日內持續休息時間下限及相關事項應由哪些組織或單位決定或授權所屬機構制定"
+  },
+  {
+    "qid": "Q131_synonympart_131",
+    "parentqid": "Q131",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "官員 因為 什麼 理由 能夠 休假"
+  },
+  {
+    "qid": "Q132_synonympart_132",
+    "parentqid": "Q132",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依據 條款 政府人員 在 何種 狀況 下 能 擔當 為 盈利 為 目標 之 企業 的 理事 或 監事"
+  },
+  {
+    "qid": "Q133_synonympart_133",
+    "parentqid": "Q133",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "官員 開始 工作 需要 多少 時間 完成 辭職 註冊 繳納 關聯 證書 材料"
+  },
+  {
+    "qid": "Q134_synonympart_134",
+    "parentqid": "Q134",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "官員 上任 應該 在 何時 內 把 他們 持有 的 盈利 企業 股份 或 出資 全部 出售 或 託管 給 信託公司"
+  },
+  {
+    "qid": "Q135_synonympart_135",
+    "parentqid": "Q135",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "情境 可 依法 工作 時間 從事 其他 工作 違反 條款 規定"
+  },
+  {
+    "qid": "Q136_synonympart_136",
+    "parentqid": "Q136",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "官員 狀況 服務 單位 同意 兼職 教學 研究 任務"
+  },
+  {
+    "qid": "Q137_synonympart_137",
+    "parentqid": "Q137",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "公職人員 兼職 項目 規定 職位 業務 工作 職務 申請 批准 辦法 機關 制定"
+  },
+  {
+    "qid": "Q138_synonympart_138",
+    "parentqid": "Q138",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "官員 離開 三年 不能 擔當 什麼 樣 職務"
+  },
+  {
+    "qid": "Q139_synonympart_139",
+    "parentqid": "Q139",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "官員 什麼 條件 應 該 依法 迴避"
+  },
+  {
+    "qid": "Q140_synonympart_140",
+    "parentqid": "Q140",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "政府 官員 不得 與 哪些 對象 私下 借款 訂立 互惠 合約 或 享有 其他 不當 利益"
+  },
+  {
+    "qid": "Q141_synonympart_141",
+    "parentqid": "Q141",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "辭職 官員 違背 條款 規定 受到 如何 處分"
+  },
+  {
+    "qid": "Q142_synonympart_142",
+    "parentqid": "Q142",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "條文 規定 決定 公營 事業 機構 人員 經營 商業 執行 業務 兼課 兼職 範圍 限制 程序 相關 事項 辦法"
+  },
+  {
+    "qid": "Q143_synonympart_143",
+    "parentqid": "Q143",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法律 修訂 條文 生效 時間 由何 單位 決策"
+  },
+  {
+    "qid": "Q144_synonympart_144",
+    "parentqid": "Q144",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "官員 晉升 應 根據 哪條 法規 執行"
+  },
+  {
+    "qid": "Q145_synonympart_145",
+    "parentqid": "Q145",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "政府職員 晉升 應該 評估 什麼 因素 並 根據 什麼 準則 進行"
+  },
+  {
+    "qid": "Q146_synonympart_146",
+    "parentqid": "Q146",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依據 機構 空缺 單位 以外 人士 補充 類型 人士 豁免 公開 招聘"
+  },
+  {
+    "qid": "Q147_synonympart_147",
+    "parentqid": "Q147",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "哪些 人 員工 可以 互相 之間 調動 任用"
+  },
+  {
+    "qid": "Q148_synonympart_148",
+    "parentqid": "Q148",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "何種 狀況 非志願性 由職責單位 批准 調動 較低 工作 可 豁免 通過 評選 轉任 和 調動前 相同 之 工作"
+  },
+  {
+    "qid": "Q149_synonympart_149",
+    "parentqid": "Q149",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "機構 升遷 員工 處理 相同 隊列 人員 眾多 狀況"
+  },
+  {
+    "qid": "Q150_synonympart_150",
+    "parentqid": "Q150",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "機構 處理 員工 晉升 需要 考慮 哪些 要素 訂立 評估 規範 分數"
+  },
+  {
+    "qid": "Q151_synonympart_151",
+    "parentqid": "Q151",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "若 有 兩名 以上 的 分數 一樣 時 應 該 如何 確定 排列 的 順序"
+  },
+  {
+    "qid": "Q152_synonympart_152",
+    "parentqid": "Q152",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "單位 處理 政府 員工 晉升 時候 是否 必要 組成 評選 委員會"
+  },
+  {
+    "qid": "Q153_synonympart_153",
+    "parentqid": "Q153",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "哪些 狀況 機構 員工 晉升 審核 能夠 上層 機構 統一 處理"
+  },
+  {
+    "qid": "Q154_synonympart_154",
+    "parentqid": "Q154",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "每個 機構 在 處理 公職人員 晉升 時 如何 決定 哪些 員工 被 列入 晉級 評選 名單 並 進行 審核"
+  },
+  {
+    "qid": "Q155_synonympart_155",
+    "parentqid": "Q155",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "哪些 職位 可以 免經 審核 由 機構 或 其 上層 機構 首長 直接 批准"
+  },
+  {
+    "qid": "Q156_synonympart_156",
+    "parentqid": "Q156",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依照 人士 經過 審核 委員會 同意 優先 晉升"
+  },
+  {
+    "qid": "Q157_synonympart_157",
+    "parentqid": "Q157",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "近期 獲得 哪些 榮譽 或 獎章 的 人 可以 優先 升遷"
+  },
+  {
+    "qid": "Q158_synonympart_158",
+    "parentqid": "Q158",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "近來 十二個月中 因為 喝酒後 開車 或 性別 騷擾 行為 受到 什麼樣的 懲罰"
+  },
+  {
+    "qid": "Q159_synonympart_159",
+    "parentqid": "Q159",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "情形 工資 支付 全職 培訓 進修 半年 超過 無限制"
+  },
+  {
+    "qid": "Q160_synonympart_160",
+    "parentqid": "Q160",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "條文 提及 什麼 狀況 各 單位 能夠 對 隸屬 成員 執行 調動"
+  },
+  {
+    "qid": "Q161_synonympart_161",
+    "parentqid": "Q161",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "條款 提及 晉升 高級 官職 經歷 程序"
+  },
+  {
+    "qid": "Q162_synonympart_162",
+    "parentqid": "Q162",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "機構 處理 提升 業務 員工 涉及 什麼 狀況 應 該 避免"
+  },
+  {
+    "qid": "Q163_synonympart_163",
+    "parentqid": "Q163",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "根據 條文 各 單位 情形 應 異動報備部門 備案"
+  },
+  {
+    "qid": "Q164_synonympart_164",
+    "parentqid": "Q164",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "政府職員 升遷 規定 根據 哪項 條文 訂立"
+  },
+  {
+    "qid": "Q165_synonympart_165",
+    "parentqid": "Q165",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法律 條款 如何 判斷 職位 是否 较高 職位"
+  },
+  {
+    "qid": "Q166_synonympart_166",
+    "parentqid": "Q166",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "假如 單位 決議 以 本 單位 之外 員工 替補 缺額 須 怎樣 公開 遴選"
+  },
+  {
+    "qid": "Q167_synonympart_167",
+    "parentqid": "Q167",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "方法 條 款 樣式 人士 可以 彼此 職務調動"
+  },
+  {
+    "qid": "Q168_synonympart_168",
+    "parentqid": "Q168",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "誰 贊成 調動者 的 調動"
+  },
+  {
+    "qid": "Q169_synonympart_169",
+    "parentqid": "Q169",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "每個 單位 在 處理 公開 選拔 時 候選 名單 的 限制 是 多少"
+  },
+  {
+    "qid": "Q170_synonympart_170",
+    "parentqid": "Q170",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "機構 制定 晉升 清單 時 職位 所 列 最高 等級 相似 領導 職位 是否 能 與 非 領導 職位 列為 同一 系列"
+  },
+  {
+    "qid": "Q171_synonympart_171",
+    "parentqid": "Q171",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "機構 提升 列表 職位 規定 資格 條件 人員 許多 辦理 作業"
+  },
+  {
+    "qid": "Q172_synonympart_172",
+    "parentqid": "Q172",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "該條 款 但書 所謂 下一 排列 無合適 候選人 狀況 哪些"
+  },
+  {
+    "qid": "Q173_synonympart_173",
+    "parentqid": "Q173",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依照 依據 法律 規定 條款 甄拔 方式 方法 有 哪些 什麼 什麽 什麼樣"
+  },
+  {
+    "qid": "Q174_synonympart_174",
+    "parentqid": "Q174",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "每個 單位 機構 評審 委員會 成員 數量 範圍 幾位"
+  },
+  {
+    "qid": "Q175_synonympart_175",
+    "parentqid": "Q175",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "成員 期限 多長"
+  },
+  {
+    "qid": "Q176_synonympart_176",
+    "parentqid": "Q176",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "每個 負責 單位 成立的 政府 員工 協會 評審 委員會中 協會 代表的 指定 過程 是 什麼"
+  },
+  {
+    "qid": "Q177_synonympart_177",
+    "parentqid": "Q177",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "評審 會議 出席 成員 比例 會議"
+  },
+  {
+    "qid": "Q178_synonympart_178",
+    "parentqid": "Q178",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "評選 小組 什麼 條件 會 考核 小組 合並"
+  },
+  {
+    "qid": "Q179_synonympart_179",
+    "parentqid": "Q179",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "哪些 是 評審 委員會 根據 這部 法律 第九條 所 處理 的 事情"
+  },
+  {
+    "qid": "Q180_synonympart_180",
+    "parentqid": "Q180",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "第十條 提到 人事 單位 辦理 公務人員 升遷 造列 名冊"
+  },
+  {
+    "qid": "Q181_synonympart_181",
+    "parentqid": "Q181",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "依據 文獻 審查 委員會 在 審核 後 須 提出 何種 資料 呈報 單位 主管 選定"
+  },
+  {
+    "qid": "Q182_synonympart_182",
+    "parentqid": "Q182",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法律 規定 提升 標準 根據 哪一 條款 制定"
+  },
+  {
+    "qid": "Q183_synonympart_183",
+    "parentqid": "Q183",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "法律 條款 條項 稱謂 工作 等級 工作 相應 怎樣 界定"
+  },
+  {
+    "qid": "Q184_synonympart_184",
+    "parentqid": "Q184",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "條款 項目 稱呼 監督 職位 根據 什麼 定義"
+  },
+  {
+    "qid": "Q185_synonympart_185",
+    "parentqid": "Q185",
+    "tagone": "synonympart",
+    "tagtwo": "",
+    "question": "按照 文章 如果 有 該 當 規避 的 情況 而 不 規避 者 應該 如何 處置"
+  }
+]

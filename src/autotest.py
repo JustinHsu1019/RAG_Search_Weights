@@ -12,12 +12,15 @@ from utils.call_ai import call_aied
 import utils.config_log as config_log
 
 
+# OUTPUT FILE PATH
+RESULTFILE = "result/test_1210/testresult_185_original_top3.xlsx"
+
+
 config, logger, CONFIG_PATH = config_log.setup_config_and_logging()
 config.read(CONFIG_PATH)
 
 wea_url = config.get("Weaviate", "weaviate_url")
 PROPERTIES = ["uuid", "content"]
-RESULTFILE = "result/test_1210/testresult_185_original_top3.xlsx"
 
 
 os.environ["OPENAI_API_KEY"] = config.get("OpenAI", "api_key")
