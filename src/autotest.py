@@ -17,6 +17,8 @@ config.read(CONFIG_PATH)
 
 wea_url = config.get("Weaviate", "weaviate_url")
 PROPERTIES = ["uuid", "content"]
+RESULTFILE = "result/test_1210/testresult_185_original_top3.xlsx"
+
 
 os.environ["OPENAI_API_KEY"] = config.get("OpenAI", "api_key")
 
@@ -189,7 +191,7 @@ def main(file_path, batch_size=100):
 
             if (idx + 1) % batch_size == 0:
                 result_df = pd.DataFrame(results)
-                result_file = "result/test_1210/testresult_185_top3.xlsx"
+                result_file = RESULTFILE
                 if os.path.exists(result_file):
                     existing_df = pd.read_excel(result_file)
                     result_df = pd.concat([existing_df, result_df], ignore_index=True)
@@ -209,7 +211,7 @@ def main(file_path, batch_size=100):
 
     if results:
         result_df = pd.DataFrame(results)
-        result_file = "result/test_1210/testresult_185_top3.xlsx"
+        result_file = RESULTFILE
         if os.path.exists(result_file):
             existing_df = pd.read_excel(result_file)
             result_df = pd.concat([existing_df, result_df], ignore_index=True)
@@ -227,5 +229,5 @@ def main(file_path, batch_size=100):
 
 
 if __name__ == "__main__":
-    main("data/question.json")
+    main("data/question_original.json")
     # main("result/backup/第二次試驗/【測試資料】_60題.xlsx")
