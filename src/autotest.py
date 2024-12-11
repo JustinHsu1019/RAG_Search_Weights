@@ -12,7 +12,8 @@ from utils.call_ai import call_aied
 import utils.config_log as config_log
 
 
-# OUTPUT FILE PATH
+# FILE PATH
+INPUTFILE = "data/question_original.json"
 RESULTFILE = "result/test_1210/testresult_185_original_top3.xlsx"
 
 
@@ -232,5 +233,5 @@ def main(file_path, batch_size=100):
 
 
 if __name__ == "__main__":
-    main("data/question_original.json")
+    main(INPUTFILE)
     # main("result/backup/第二次試驗/【測試資料】_60題.xlsx")
