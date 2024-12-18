@@ -45,7 +45,7 @@ def calculate_accuracy(file_path):
 
 
 if __name__ == "__main__":
-    accuracies = calculate_accuracy("result/test_1210/testresult_185_top3.xlsx")
+    accuracies = calculate_accuracy("result/test_1210/result_185_top1.xlsx")
 
     for alpha, accuracy in accuracies.items():
         print(f"檢索結果_{alpha} 準確率: {accuracy:.2%}")
