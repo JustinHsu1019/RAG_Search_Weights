@@ -3,7 +3,7 @@ import pandas as pd
 
 # 設定路徑和輸出檔案路徑
 folder_path = 'result/test_1210'
-output_file = 'result/test_1210/merged_result.xlsx'
+output_file = 'result/test_1210/result_185_top3.xlsx'
 
 # 列出所有 Excel 檔案
 excel_files = [f for f in os.listdir(folder_path) if f.endswith('.xlsx')]
