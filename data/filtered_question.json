@@ -1,0 +1,58 @@
+[
+    {
+        "qid": "Q1_originalquestion_1",
+        "parentqid": "Q1",
+        "tagone": "originalquestion",
+        "tagtwo": "",
+        "question": "公務人員之任用應依據什麼原則來進行？"
+    },
+    {
+        "qid": "Q1_2",
+        "parentqid": "Q1",
+        "tagone": "questionWithKnowledgeStyle",
+        "tagtwo": "",
+        "question": "公務人員之任用應依據何種原則進行，方符合本法之旨趣？"
+    },
+    {
+        "qid": "Q1_questionSynonymChange_1",
+        "parentqid": "Q1",
+        "tagone": "questionSynonymChange",
+        "tagtwo": "originalq",
+        "question": "政府職員的任命應根據什麼準則來執行？"
+    },
+    {
+        "qid": "Q1_keywordpart_1",
+        "parentqid": "Q1",
+        "tagone": "keywordpart",
+        "tagtwo": "",
+        "question": "公務人員 任用 原則 進行"
+    },
+    {
+        "qid": "Q1_smallkeywordpart_1",
+        "parentqid": "Q1",
+        "tagone": "smallkeywordpart",
+        "tagtwo": "",
+        "question": "公務人員 任用 原則"
+    },
+    {
+        "qid": "Q1_synonympart_1",
+        "parentqid": "Q1",
+        "tagone": "synonympart",
+        "tagtwo": "",
+        "question": "政府職員 委任 準則 執行"
+    },
+    {
+        "qid": "Q1_complexQuestionX2_1",
+        "parentqid": "Q1",
+        "tagone": "complexQuestionX2",
+        "tagtwo": "originalq",
+        "question": "公務人員之任用應依據什麼原則來進行，以及各機關在訂定陞遷序列表時，職務所列最高職等相同的主管職務是否可以與非主管職務列為同一序列？"
+    },
+    {
+        "qid": "Q1_complexQuestionX3_1",
+        "parentqid": "Q1",
+        "tagone": "complexQuestionX3",
+        "tagtwo": "originalq",
+        "question": "公務人員之任用應依據什麼原則來進行，並在考量哪些因素及依據什麼原則下進行陞遷，以及在什麼情況下受轉調機關限制的人員可以調任至子女實際居住地的其他機關服務？"
+    }
+]
